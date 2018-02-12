@@ -86,6 +86,19 @@ header {
             margin: -50px auto;
             z-index: 5;
             background-color: $zero;
+
+            .singleCardTop {
+                height: 70px;
+                border-bottom: 1px solid $second;
+                width: 80%;
+                margin: 10px auto;
+                .cardI {
+                    font-size: 20px;
+                    color: $textCol;
+                    height: 80%;
+                    width: 90%;
+                }
+            }
         }
         #card2 {
             margin: -100px 0px;

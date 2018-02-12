@@ -28,7 +28,10 @@ header nav {
       text-align: center;
       border: 5px solid #16a753;
       border-radius: 50%;
-      line-height: 35px; }
+      line-height: 35px;
+      -webkit-transition: all .2s;
+      -o-transition: all .2s;
+      transition: all .2s; }
       header nav .socialCont .socialICont:hover {
         background-color: #16a753;
         cursor: pointer; }
@@ -49,7 +52,10 @@ header nav {
       padding: 20px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      color: #4a4a4a; }
+      color: #4a4a4a;
+      -webkit-transition: all .2s;
+      -o-transition: all .2s;
+      transition: all .2s; }
       header nav .naviCont ul li:hover {
         color: #363636;
         background-color: #16a753;

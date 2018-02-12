@@ -30,6 +30,7 @@ header {
                 border: 5px solid $second;
                 border-radius: 50%;
                 line-height: 35px;
+                transition: all .2s;
                 &:hover {
                     background-color: $second;
                     cursor: pointer;
@@ -51,6 +52,7 @@ header {
                     padding: 20px;
                     box-sizing: border-box;
                     color: $textCol;
+                    transition: all .2s;
                     &:hover {
                         color: #363636;
                         background-color: $second;

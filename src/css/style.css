@@ -57,10 +57,32 @@ header nav {
 
 .mainHeader {
   height: calc(100vh - 73px);
-  background: url("../img/apple.jpg") no-repeat;
   width: 100%;
   background-size: cover;
-  opacity: 0.2; }
+  opacity: 1;
+  position: relative; }
+  .mainHeader .logotypeCont {
+    width: 70%;
+    height: 140px;
+    background-color: rgba(199, 200, 200, 0.3);
+    position: absolute;
+    top: 20%;
+    left: 15%; }
+    .mainHeader .logotypeCont h2 {
+      color: #1f1f1f;
+      font-size: 60px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700; }
+      .mainHeader .logotypeCont h2 span {
+        color: #1dbf61; }
+  .mainHeader .mainHeaderBG {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    background: url(../img/apple.jpg) no-repeat;
+    background-size: cover;
+    opacity: 0.3; }
 
 .cards {
   height: 100px;
@@ -88,6 +110,14 @@ header nav {
           color: #4a4a4a;
           height: 80%;
           width: 90%; }
+      .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText, .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText2 {
+        margin: 0px;
+        padding: 5px;
+        text-align: center;
+        font-size: 15px;
+        color: #4a4a4a; }
+      .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText2 {
+        margin-top: 25px; }
     .cards .cardsCont #card2 {
       margin: -100px 0px;
       height: 300px; }

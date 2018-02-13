@@ -6,13 +6,13 @@
 header nav {
   width: 100%;
   height: 70px;
-  background-color: #1dbf61;
+  background-color: #b71717;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 3px solid #189a4e;
-  -webkit-box-shadow: 0px 0px 5px #1dbf61;
-          box-shadow: 0px 0px 5px #1dbf61; }
+  border-bottom: 3px solid #d62727;
+  -webkit-box-shadow: 0px 0px 5px #d62727;
+          box-shadow: 0px 0px 5px #d62727; }
   header nav .socialCont {
     -webkit-box-flex: 2;
         -ms-flex-positive: 2;
@@ -26,18 +26,20 @@ header nav {
       height: 35px;
       margin: 0px 5px;
       text-align: center;
-      border: 5px solid #16a753;
+      border: 5px solid #9a1212;
       border-radius: 50%;
       line-height: 35px;
       -webkit-transition: all .2s;
       -o-transition: all .2s;
       transition: all .2s; }
       header nav .socialCont .socialICont:hover {
-        background-color: #16a753;
+        background-color: #9a1212;
         cursor: pointer; }
+      header nav .socialCont .socialICont:hover .socialI {
+        color: white; }
       header nav .socialCont .socialICont .socialI {
         font-size: 17px;
-        color: #4a4a4a; }
+        color: #e0e0e0; }
   header nav .naviCont ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -52,14 +54,18 @@ header nav {
       padding: 20px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      color: #4a4a4a;
+      color: #e0e0e0;
       -webkit-transition: all .2s;
       -o-transition: all .2s;
       transition: all .2s; }
       header nav .naviCont ul li:hover {
-        color: #363636;
-        background-color: #16a753;
+        color: white;
+        background-color: #9a1212;
         cursor: pointer; }
+    header nav .naviCont ul .activeNav {
+      color: white;
+      background-color: #9a1212;
+      cursor: pointer; }
 
 .mainHeader {
   height: calc(100vh - 73px);
@@ -73,7 +79,8 @@ header nav {
     background-color: rgba(199, 200, 200, 0.3);
     position: absolute;
     top: 20%;
-    left: 15%; }
+    left: 15%;
+    border-radius: 5px; }
     .mainHeader .logotypeCont h2 {
       color: #1f1f1f;
       font-size: 60px;
@@ -81,7 +88,7 @@ header nav {
       text-align: center;
       font-weight: 700; }
       .mainHeader .logotypeCont h2 span {
-        color: #1dbf61; }
+        color: #b71717; }
   .mainHeader .mainHeaderBG {
     background-color: red;
     width: 100%;
@@ -89,13 +96,61 @@ header nav {
     background: url(../img/apple.jpg) no-repeat;
     background-size: cover;
     opacity: 0.3; }
+  .mainHeader .toOffer {
+    position: absolute;
+    bottom: 25%;
+    left: calc(50% - 140px);
+    width: 280px;
+    height: 60px;
+    border: 3px solid #9a1212;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #b71717;
+    border-radius: 5px;
+    color: white;
+    padding-bottom: 20px;
+    font-weight: 700;
+    z-index: 1;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s; }
+    .mainHeader .toOffer:hover {
+      background-color: #d62727;
+      border: 3px solid #b71717;
+      cursor: pointer; }
+    .mainHeader .toOffer:hover .arrCont {
+      background-color: #d62727;
+      border: 5px solid #b71717; }
+    .mainHeader .toOffer:focus {
+      outline: none; }
+    .mainHeader .toOffer .arrCont {
+      height: 50px;
+      width: 50px;
+      border: 5px solid #9a1212;
+      background-color: #ce1a1a;
+      border-radius: 50%;
+      position: absolute;
+      left: calc(50% - 30px);
+      bottom: -35px;
+      z-index: 0;
+      -webkit-transition: .2s;
+      -o-transition: .2s;
+      transition: .2s; }
+      .mainHeader .toOffer .arrCont .fa-caret-down {
+        font-size: 40px;
+        padding: 5px;
+        -webkit-animation: arrowDown 2s infinite;
+                animation: arrowDown 2s infinite; }
 
 .cards {
   height: 100px;
   width: 100%;
-  background-color: #1dbf61;
-  border-top: 3px solid #189a4e;
-  border-bottom: 3px solid #189a4e; }
+  background-color: #b71717;
+  border-top: 3px solid #d62727;
+  border-bottom: 3px solid #d62727;
+  -webkit-box-shadow: 0 0 3px #d62727;
+          box-shadow: 0 0 3px #d62727; }
   .cards .cardsCont {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -105,15 +160,16 @@ header nav {
       width: 200px;
       margin: -50px auto;
       z-index: 5;
-      background-color: #2ed876; }
+      background-color: #d62727;
+      border-radius: 5px; }
       .cards .cardsCont .singleCardCont .singleCardTop {
         height: 70px;
-        border-bottom: 1px solid #16a753;
+        border-bottom: 1px solid #9a1212;
         width: 80%;
         margin: 10px auto; }
         .cards .cardsCont .singleCardCont .singleCardTop .cardI {
           font-size: 20px;
-          color: #4a4a4a;
+          color: #e0e0e0;
           height: 80%;
           width: 90%; }
       .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText, .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText2 {
@@ -121,7 +177,7 @@ header nav {
         padding: 5px;
         text-align: center;
         font-size: 15px;
-        color: #4a4a4a; }
+        color: #e0e0e0; }
       .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText2 {
         margin-top: 25px; }
     .cards .cardsCont #card2 {
@@ -150,7 +206,7 @@ header nav {
   .diamondCont .singleDiamondCont {
     height: 200px;
     width: 200px;
-    border: 2px solid #16a753;
+    border: 2px solid #9a1212;
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -160,7 +216,8 @@ header nav {
     -o-transition: .5s;
     transition: .5s;
     margin: -102px;
-    overflow: hidden; }
+    overflow: hidden;
+    border-radius: 5px; }
   .diamondCont #diamon1 {
     top: 0px;
     left: 0px; }
@@ -197,3 +254,25 @@ header nav {
     -webkit-transform: rotate(-45deg) scale(1.42);
         -ms-transform: rotate(-45deg) scale(1.42);
             transform: rotate(-45deg) scale(1.42); }
+
+@-webkit-keyframes arrowDown {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px); }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }
+
+@keyframes arrowDown {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px); }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); } }

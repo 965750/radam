@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Radam</title>
+    <title></title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
-
 <body>
     <header>
         <nav>
@@ -21,7 +24,7 @@
             </div>
             <div class="naviCont">
                 <ul>
-                    <li class="singleNavi">Firma</li>
+                    <li class="singleNavi activeNav">Firma</li>
                     <li class="singleNavi">Oferta</li>
                     <li class="singleNavi">Zamówienie</li>
                     <li class="singleNavi">Kontakt</li>
@@ -31,6 +34,11 @@
         <article class="mainHeader">
             <section class="logotypeCont"><h2>Kompleksowe<br> <span>Sprzątanie</span> Budynków</h2></section>
             <section class="mainHeaderBG"></section>
+            <button class="toOffer">Sprawdź co oferujemy<br>
+            <div class="arrCont">
+                <i class="fas fa-caret-down"></i>
+            </div>
+            </button>
         </article>
     </header>
     <main class="firma">
@@ -64,15 +72,17 @@
             </div>
         </article>
         <article class="diamondPreCont">
-        <article class="diamondCont">
+        <section class="diamondCont">
             <div class="singleDiamondCont" id="diamon1"><div class="sImg"></div></div>
             <div class="singleDiamondCont" id="diamon2"><div class="sImg"></div></div>
             <div class="singleDiamondCont" id="diamon3"><div class="sImg"></div></div>
             <div class="singleDiamondCont" id="diamon4"><div class="sImg"></div></div>
             <div class="singleDiamondCont" id="diamon5"><div class="sImg"></div></div>
+        </section>
         </article>
+        <article>
+            
         </article>
     </main>
 </body>
-
 </html>

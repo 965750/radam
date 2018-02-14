@@ -5,6 +5,7 @@ $second: #b10b0b;
 $textCol: #2f2f2f;
 $w0: #f3f3f3;
 $w1: #d4d4d4;
+$w2: #b9b9b9;
 
 * {
     margin: 0px;
@@ -237,7 +238,7 @@ header {
     .singleDiamondCont {
         height: 200px;
         width: 200px;
-        border: 2px solid $second;
+        border: 2px solid $w2;
         transform: rotate(45deg);
         position: absolute;
         background-color: black;

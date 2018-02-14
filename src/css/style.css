@@ -206,7 +206,7 @@ header nav {
   .diamondCont .singleDiamondCont {
     height: 200px;
     width: 200px;
-    border: 2px solid #b10b0b;
+    border: 2px solid #b9b9b9;
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);

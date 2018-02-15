@@ -9,12 +9,10 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </head>
+
 <body>
     <header>
         <nav id="mainNav">
@@ -33,7 +31,9 @@
             </div>
         </nav>
         <article class="mainHeader">
-            <section class="logotypeCont"><h2>Kompleksowe<br> <span>Sprzątanie</span> Budynków</h2></section>
+            <section class="logotypeCont">
+                <h2>Kompleksowe<br> <span>Sprzątanie</span> Budynków</h2>
+            </section>
             <section class="mainHeaderBG"></section>
             <button class="toOffer">Sprawdź co oferujemy<br>
             <div class="arrCont">
@@ -47,15 +47,26 @@
             <div class="cardsCont">
                 <div class="singleCardCont" id="card1">
                     <div class="singleCardTop">
-                        <i class="fas cardI fa-phone"></i>
+                        <i class="fas fa-location-arrow"></i>
                     </div>
                     <div class="singleCardBot">
-                        <p class="singleCardBotText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, unde, possimus qui illo eum modi.</p>
+                        <p class="singleCardBotTextPlace">
+                            FUH Radam
+                        </p>
+                        <p class="singleCardBotTextPlace">
+                            Ryszard Adamkiewicz
+                        </p>
+                        <p class="singleCardBotTextPlace">
+                            ul. Mostowa 11
+                        </p>
+                        <p class="singleCardBotTextPlace">
+                            47-223 Kędzierzyn-Koźle
+                        </p>
                     </div>
                 </div>
                 <div class="singleCardCont" id="card2">
                     <div class="singleCardTop">
-                        <i class="fas cardI fa-phone"></i>
+                        <i class="fas fa-shower"></i>
                     </div>
                     <div class="singleCardBot">
                         <p class="singleCardBotText">Specjalizujemy się w czyszczeniu powierzchni w obiektach użtkowych i przemysłowych</p>
@@ -64,31 +75,35 @@
                 </div>
                 <div class="singleCardCont" id="card3">
                     <div class="singleCardTop">
-                        <i class="fas cardI fa-phone"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
                     <div class="singleCardBot">
-                        <p class="singleCardBotText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, unde, possimus qui illo eum modi.</p>
+                        <p class="singleCardBotTextP">Maszyny</p>
+                        <p class="singleCardBotTextP">Chemia</p>
+                        <p class="singleCardBotTextP">Serwis</p>
                     </div>
                 </div>
             </div>
         </article>
         <article class="diamondPreCont">
             <section class="diamondCont" id="vue-app">
-                <div class="singleDiam">
-                    <div class="diamImg"></div>
+                <div v-for="(product, index) in products" class="singleDiam">
+                    <div class="diamImg" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
                     <div class="diamTxt">
-                        <h3>Produkt 1</h3>   
+                        <h3>{{product.name}}</h3>
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quis optio, architecto necessitatibus, minus blanditiis perspiciatis totam nam quia facere sit unde maiores laboriosam incidunt beatae fuga ex? Similique repudiandae vero unde fugiat error dignissimos hic quia doloribus, est eos ea, nostrum maxime consequuntur enim temporibus officia rem velit.    Ratione!
+                            {{product.desc}}
                         </p>
-                        <button>Kup Teraz</button>
+                        <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button>Zamów</button></div>
                     </div>
                 </div>
             </section>
         </article>
         <article>
-            
+
         </article>
     </main>
+    <script src="js/app.js"></script>
 </body>
+
 </html>

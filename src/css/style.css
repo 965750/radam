@@ -163,27 +163,63 @@ header #mainNav {
       width: 200px;
       margin: -50px auto;
       z-index: 5;
-      background-color: #ebebeb;
-      border-radius: 5px; }
+      background-color: #fafafa;
+      border-radius: 15px; }
       .cards .cardsCont .singleCardCont .singleCardTop {
         height: 70px;
         border-bottom: 1px solid #b9b9b9;
-        width: 80%;
-        margin: 10px auto; }
+        width: 100%;
+        margin: auto;
+        background-color: #ebebeb;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding-top: 10px; }
         .cards .cardsCont .singleCardCont .singleCardTop .cardI {
           font-size: 20px;
           color: #2f2f2f;
           height: 80%;
           width: 90%; }
+        .cards .cardsCont .singleCardCont .singleCardTop .fa-location-arrow {
+          font-size: 45px;
+          padding: 5px 0px 0px 70px;
+          color: #2f2f2f; }
+        .cards .cardsCont .singleCardCont .singleCardTop .fa-shower {
+          font-size: 50px;
+          padding: 5px 0px 0px 75px;
+          color: #2f2f2f; }
+        .cards .cardsCont .singleCardCont .singleCardTop .fa-cogs {
+          font-size: 45px;
+          padding: 5px 0px 0px 70px;
+          color: #2f2f2f; }
       .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText, .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText2 {
         margin: 0px;
-        padding: 3px;
+        padding: 4px;
         text-align: center;
         font-size: 15px;
-        color: #2f2f2f; }
+        color: #2f2f2f;
+        margin-top: 8px; }
       .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotText2 {
         margin-top: 10px;
-        border-top: 1px solid #d4d4d4; }
+        border-top: 1px solid #f3f3f3; }
+      .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotTextP {
+        font-size: 23px;
+        text-align: center;
+        color: #2f2f2f;
+        padding: 3px;
+        font-weight: 700;
+        border-bottom: 1px solid #f3f3f3; }
+      .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotTextP:first-child {
+        margin-top: 8px; }
+      .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotTextP:last-child {
+        border-bottom: 0px solid #f3f3f3; }
+      .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotTextPlace {
+        padding: 3px;
+        font-size: 15px;
+        text-align: center;
+        color: #2f2f2f;
+        margin: 0px; }
+      .cards .cardsCont .singleCardCont .singleCardBot .singleCardBotTextPlace:first-child {
+        margin-top: 8px; }
     .cards .cardsCont #card2 {
       margin: -100px 0px;
       height: 300px; }
@@ -194,7 +230,7 @@ header #mainNav {
 
 .diamondPreCont {
   position: relative;
-  height: 600px;
+  height-min: 600px;
   max-width: 1200px;
   margin: auto; }
 
@@ -203,20 +239,21 @@ header #mainNav {
   .diamondCont .singleDiam {
     width: 100%;
     height: 250px;
-    background-color: #ffe1e1;
+    border-top: 3px solid #f3f3f3;
     padding: 20px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    margin-bottom: 50px; }
     .diamondCont .singleDiam .diamImg {
       height: 200px;
       width: 200px;
-      background-color: blue;
-      -webkit-transform: rotate(7deg);
-          -ms-transform: rotate(7deg);
-              transform: rotate(7deg);
+      background-color: #d4d4d4;
+      -webkit-transform: rotate(5deg);
+          -ms-transform: rotate(5deg);
+              transform: rotate(5deg);
       margin-left: 10%;
       -webkit-box-shadow: 0 0 15px black;
               box-shadow: 0 0 15px black;
@@ -233,20 +270,30 @@ header #mainNav {
       .diamondCont .singleDiam .diamTxt p {
         text-align: center;
         color: #2f2f2f; }
-      .diamondCont .singleDiam .diamTxt button {
-        height: 40px;
-        width: 150px;
-        font-size: 18px;
-        text-align: center;
-        border-radius: 10px;
-        padding-bottom: 2px;
-        font-weight: 700;
-        border: 3px solid #b10b0b;
-        background-color: #c60e0e;
-        color: white;
+      .diamondCont .singleDiam .diamTxt .costCont {
         position: absolute;
         right: 10%;
         bottom: 0%; }
+        .diamondCont .singleDiam .diamTxt .costCont button {
+          height: 40px;
+          width: 150px;
+          font-size: 18px;
+          text-align: center;
+          border-radius: 10px;
+          padding-bottom: 2px;
+          font-weight: 700;
+          border: 3px solid #b10b0b;
+          background-color: #c60e0e;
+          color: white; }
+          .diamondCont .singleDiam .diamTxt .costCont button:hover {
+            background-color: #d62727;
+            border: 3px solid #c60e0e;
+            cursor: pointer; }
+        .diamondCont .singleDiam .diamTxt .costCont .cost {
+          margin-right: 20px;
+          font-size: 25px;
+          font-weight: 700;
+          border-bottom: 2px solid #c60e0e; }
 
 @-webkit-keyframes arrowDown {
   0% {

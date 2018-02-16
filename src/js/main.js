@@ -4,7 +4,9 @@ $(document).ready(function(){
 
 $(window).on("scroll", function(){
     
-    if($(window).scrollTop() > 70){
+    console.log($(window).scrollTop());
+    
+    if($(window).scrollTop() > 40){
         $("#mainNav").css({
             position: 'fixed',
             zIndex: 15,
@@ -39,5 +41,13 @@ $(window).on("scroll", function(){
             padding: '20px',
             fontSize: '23px',
         });
+    }
+    if($(window).scrollTop() > 0 && $(window).scrollTop() < 754){
+        $(".singleNavi").removeClass("activeNav");
+        $(".singleNavi:nth-child(1)").addClass("activeNav");
+    }
+    else if($(window).scrollTop() > 755){
+        $(".singleNavi").removeClass("activeNav");
+        $(".singleNavi:nth-child(2)").addClass("activeNav");
     }
 });

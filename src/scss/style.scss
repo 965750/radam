@@ -109,10 +109,11 @@ header {
         background-color: red;
         width: 100%;
         height: 100%;
-        background: url(../img/apple.jpg) no-repeat;
+        background: url(../img/background.jpg) no-repeat;
         background-size: cover;
-        opacity: 0.3;
+        opacity: 0.4;
     }
+    
     .toOffer {
         position: absolute;
         bottom: 25%;
@@ -223,11 +224,13 @@ header {
                     font-size: 15px;
                     color: $textCol;
                     margin-top: 8px;
+                    font-family: 'Roboto', sans-serif;
                 }
                 .singleCardBotText2 {
                     @extend .singleCardBotText;
                     margin-top: 10px;
                     border-top: 1px solid $w0;
+                    font-family: 'Roboto', sans-serif;
                 }
                 .singleCardBotTextP {
                     font-size: 23px;
@@ -236,6 +239,7 @@ header {
                     padding: 3px;
                     font-weight: 700;
                     border-bottom: 1px solid $w0;
+                    font-family: 'Roboto', sans-serif;
                 }
                 .singleCardBotTextP:first-child{
                     margin-top: 8px;
@@ -249,6 +253,7 @@ header {
                     text-align: center;
                     color: $textCol;
                     margin: 0px;
+                    font-family: 'Roboto', sans-serif;
                 }
                 .singleCardBotTextPlace:first-child{
                     margin-top: 8px;
@@ -290,11 +295,14 @@ header {
         .diamImg {
             height: 200px;
             width: 200px;
-            background-color: $w1;
+            background-color: white;
             transform: rotate(5deg);
             margin-left: 10%;
             box-shadow: 0 0 15px black;
             border-radius: 5px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .diamTxt {
             width: 60%;
@@ -305,10 +313,12 @@ header {
                 margin-bottom: 20px;
                 font-size: 25px;
                 color: $textCol;
+                font-family: 'Roboto', sans-serif;
             }
             p {
                 text-align: center;
                 color: $textCol;
+                font-family: 'Roboto', sans-serif;
             }
             .costCont {
                 position: absolute;

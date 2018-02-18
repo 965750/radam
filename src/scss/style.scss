@@ -112,39 +112,25 @@ header {
         background: url(../img/background.jpg) no-repeat;
         background-size: cover;
         opacity: 0.4;
+        box-shadow: 0 5px 15px #5c5c5c;
     }
     
     .toOffer {
         position: absolute;
-        bottom: 25%;
-        left: calc(50% - 140px);
-        width: 280px;
-        height: 60px;
-        border: 3px solid $second;
-        font-size: 17px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background-color: $first;
-        border-radius: 5px;
-        color: white;
-        padding-bottom: 20px;
-        font-weight: 700;
-        z-index: 1;
+        bottom: 15%;
+        left: calc(50% - 25px);
         transition: .2s;
-
-        &:hover {
-            background-color: $zero;
-            border: 3px solid $first;
-            cursor: pointer;
-        }
         &:hover .arrCont {
-            background-color: $zero;
+            background-color: $first;
             border: 5px solid $first;
+            cursor: pointer;
+            opacity: 1;
         }
         &:focus {
             outline: none;
         }
         .arrCont {
+            color: white;
             height: 50px;
             width: 50px;
             border: 5px solid $second;
@@ -155,6 +141,7 @@ header {
             bottom: -35px;
             z-index: 0;
             transition: .2s;
+            opacity: .9;
             .fa-caret-down {
                 font-size: 40px;
                 padding: 5px;
@@ -164,116 +151,10 @@ header {
     }
 }
 
-.cards {
-    height: 100px;
-    width: 100%;
-    background-color: $w0;
-    border-top: 3px solid $w1;
-    border-bottom: 3px solid $w1;
-    box-shadow: 0 0 5px black;
 
-    .cardsCont {
-        display: flex;
-
-        .singleCardCont {
-            height: 200px;
-            width: 200px;
-            margin: -50px auto;
-            z-index: 5;
-            background-color: $w00;
-            border-radius: 15px;
-
-            .singleCardTop {
-                height: 70px;
-                border-bottom: 1px solid $w2;
-                width: 100%;
-                margin: auto;
-                background-color: $w05;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-                padding-top: 10px;
-                
-                .cardI {
-                    font-size: 20px;
-                    color: $textCol;
-                    height: 80%;
-                    width: 90%;
-                }
-                .fa-location-arrow {
-                    font-size: 45px;
-                    padding: 5px 0px 0px 70px;
-                    color: $textCol;
-                }
-                .fa-shower {
-                    font-size: 50px;
-                    padding: 5px 0px 0px 75px;
-                    color: $textCol;
-                }
-                .fa-cogs {
-                    font-size: 45px;
-                    padding: 5px 0px 0px 70px;
-                    color: $textCol;
-                }
-            }
-            .singleCardBot {
-                
-                .singleCardBotText {
-                    margin: 0px;
-                    padding: 4px;
-                    text-align: center;
-                    font-size: 15px;
-                    color: $textCol;
-                    margin-top: 8px;
-                    font-family: 'Roboto', sans-serif;
-                }
-                .singleCardBotText2 {
-                    @extend .singleCardBotText;
-                    margin-top: 10px;
-                    border-top: 1px solid $w0;
-                    font-family: 'Roboto', sans-serif;
-                }
-                .singleCardBotTextP {
-                    font-size: 23px;
-                    text-align: center;
-                    color: $textCol;
-                    padding: 3px;
-                    font-weight: 700;
-                    border-bottom: 1px solid $w0;
-                    font-family: 'Roboto', sans-serif;
-                }
-                .singleCardBotTextP:first-child{
-                    margin-top: 8px;
-                }
-                .singleCardBotTextP:last-child{
-                    border-bottom: 0px solid $w0;
-                }
-                .singleCardBotTextPlace{
-                    padding: 3px;
-                    font-size: 15px;
-                    text-align: center;
-                    color: $textCol;
-                    margin: 0px;
-                    font-family: 'Roboto', sans-serif;
-                }
-                .singleCardBotTextPlace:first-child{
-                    margin-top: 8px;
-                }
-            }
-        }
-        #card2 {
-            margin: -100px 0px;
-            height: 300px;
-        }
-        #card3 {
-            margin-left: 20px;
-        }
-        #card1 {
-            margin-right: 20px;
-        }
-    }
+.firma {
+    height: 600px;
 }
-
-.firma {}
 
 .diamondPreCont {
     position: relative;

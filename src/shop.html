@@ -1,68 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+	// Message Vars
+	$msg = '';
+	$msgClass = '';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
-</head>
+	// Check For Submit
+	if(filter_has_var(INPUT_POST, 'submit')){
+		// Get Form Data
+		$name = htmlspecialchars($_POST['name']);
+		$email = htmlspecialchars($_POST['email']);
+		$message = htmlspecialchars($_POST['message']);
+        $option = htmlspecialchars($_POST['option']);
 
-<body>
-    <header>
-        <nav id="mainNav">
-            <div class="socialCont">
-                <div class="socialICont"><i class="fab socialI fa-facebook-f"></i></div>
-                <div class="socialICont"><i class="fas socialI fa-envelope"></i></div>
-                <div class="socialICont"><i class="fas socialI fa-phone"></i></div>
-            </div>
-            <div class="naviCont">
-                <ul>
-                    <a href="index.html"><li class="singleNavi">Firma</li></a>
-                    <a href="shop.html"><li class="singleNavi activeNav">Sklep</li></a>
-                    <li class="singleNavi">Zamówienie</li>
-                    <li class="singleNavi">Kontakt</li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main class="firma">
-        <article class="diamondPreCont">
-            <section class="diamondCont" id="vue-app">
-                <div v-for="(product, index) in products" class="singleDiam">
-                    <div class="diamImg" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
-                    <div class="diamTxt">
-                        <h3>{{product.name}}</h3>
-                        <p>
-                            {{product.desc}}
-                        </p>
-                        <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button>Zamów</button></div>
+		// Check Required Fields
+		if(!empty($email) && !empty($name) && !empty($message)){
+			// Passed
+			// Check Email
+			if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+				// Failed
+				$msg = 'Please use a valid email';
+				$msgClass = 'no';
+			} else {
+				// Passed
+				$toEmail = 'aventhelast@gmail.com';
+				$subject = 'Contact Request From '.$name;
+				$body = '<h2>Contact Request</h2>
+					<h4>Name</h4><p>'.$name.'</p>
+					<h4>Email</h4><p>'.$email.'</p>
+                    <h4>Subject</h4><p>'.$option.'</p>
+					<h4>Message</h4><p>'.$message.'</p>
+				';
+
+				// Email Headers
+				$headers = "MIME-Version: 1.0" ."\r\n";
+				$headers .="Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+				// Additional Headers
+				$headers .= "From: " .$name. "<".$email.">". "\r\n";
+
+				if(mail($toEmail, $subject, $body, $headers)){
+					// Email Sent
+					$msg = 'Your email has been sent';
+					$msgClass = 'yes';
+				} else {
+					// Failed
+					$msg = 'Your email was not sent';
+					$msgClass = 'no';
+				}
+			}
+		} else {
+			// Failed
+			$msg = 'Please fill in all fields';
+			$msgClass = 'alert-danger';
+		}
+	}
+?>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav id="mainNav">
+                <div class="socialCont">
+                    <div class="socialICont"><i class="fab socialI fa-facebook-f"></i></div>
+                    <div class="socialICont"><i class="fas socialI fa-envelope"></i></div>
+                    <div class="socialICont"><i class="fas socialI fa-phone"></i></div>
+                </div>
+                <div class="naviCont">
+                    <ul>
+                        <a href="index.html">
+                            <li class="singleNavi">Firma</li>
+                        </a>
+                        <a href="shop.html">
+                            <li class="singleNavi activeNav">Sklep</li>
+                        </a>
+                        <li class="singleNavi">Zamówienie</li>
+                        <li class="singleNavi">Kontakt</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="firma">
+            <article class="diamondPreCont">
+                <section class="diamondCont" id="vue-app">
+                    <div v-for="(product, index) in products" class="singleDiam">
+                        <div class="diamImg" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
+                        <div class="diamTxt">
+                            <h3>{{product.name}}</h3>
+                            <p>
+                                {{product.desc}}
+                            </p>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button>Zamów</button></div>
+                        </div>
                     </div>
-                </div>
-                <div class="orderCont">
-                    <form>
-                        <select>
-                            <option v-for="(product, index) in products" v-bind:value="product.name">{{product.name}}</option>
-                        </select>
-                        <input type="text">
-                        <input type="email">
-                        <textarea></textarea>
-                        <input type="submit" value="Zamów">
-                    </form>
-                </div>
-            </section>
-        </article>
-        <article>
+                    <div class="orderCont">
+                        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                            <select>
+                            <option  v-for="(product, index) in products" v-bind:value="product.name" name="option">{{product.name}}</option>
+                            </select>
+                            <?php if($msg != ''): ?>
+                            <div class="alert <?php echo $msgClass; ?>">
+                                <?php echo $msg; ?>
+                            </div>
+                            <?php endif; ?>
+                            <label class="labelHeader" for="name">Imię i Nazwisko</label>
+                            <input id="name" name="name" type="text" value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
+                            <label class="labelHeader" for="email">Email</label>
+                            <input id="email" name="email" type="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
+                            <label class="labelHeader" for="msg">Wiadomość</label>
+                            <textarea name="message" id="msg"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
+                            <input type="submit" value="Złóż Zamówienie">
+                        </form>
+                    </div>
+                </section>
+            </article>
+            <article>
 
-        </article>
-    </main>
-    <script src="js/app.js"></script>
-</body>
+            </article>
+        </main>
+        <script src="js/app.js"></script>
+    </body>
 
-</html>
+    </html>

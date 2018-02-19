@@ -176,6 +176,7 @@ header {
                 color: white;
                 font-size: 20px;
                 font-weight: 700;
+                box-sizing: border-box;
                 &:hover{
                     cursor: pointer;
                     background-color: lighten($first, 5%);
@@ -187,22 +188,118 @@ header {
                     background-color: darken($first, 10%);
                 }
             }
+            label{
+                text-align: left;
+                display: block;
+                width: 500px;
+                margin: 20px auto 0px;
+                font-weight: 700;
+            }
             input[type="text"] {
-                width: 600px;
+                width: 500px;
                 display: block;
                 margin: auto;
-                border: 0px solid red;
-                border-bottom: 1px solid $first;
+                border-radius: 10px;
+                border: 1px solid $first;
                 height: 40px;
                 padding: 5px;
-                font-size: 20px;
+                font-size: 18px;
                 transition: .1s all;
+                box-sizing: border-box;
                 
+                &:hover{
+                    cursor: pointer;
+                    background-color: #fafafa;
+                }
                 &:focus{
                     outline: none;
-                    background-color: #f9f9f9;
-                    box-shadow: 0px 0px 3px #606060;
+                    background-color: #fdfdfd;
+                    box-shadow: 0px 0px 5px #606060;
+                    cursor: text;
                 }
+            }
+            input[type="email"] {
+                width: 500px;
+                display: block;
+                margin: auto;
+                border-radius: 10px;
+                border: 1px solid $first;
+                height: 40px;
+                padding: 5px;
+                font-size: 18px;
+                transition: .1s all;
+                box-sizing: border-box;
+                
+                &:hover{
+                    cursor: pointer;
+                    background-color: #fafafa;
+                }
+                &:focus{
+                    outline: none;
+                    background-color: #fdfdfd;
+                    box-shadow: 0px 0px 5px #606060;
+                    cursor: text;
+                }
+            }
+            textarea {
+                min-width: 500px;
+                min-height: 200px;
+                max-width: 500px;
+                max-height: 200px;
+                display: block;
+                margin: auto;
+                border-radius: 10px;
+                border: 1px solid $first;
+                padding: 5px;
+                font-size: 18px;
+                transition: .1s all;
+                box-sizing: border-box;
+                
+                &:hover{
+                    cursor: pointer;
+                    background-color: #fafafa;
+                }
+                &:focus{
+                    outline: none;
+                    background-color: #fdfdfd;
+                    box-shadow: 0px 0px 5px #606060;
+                    cursor: text;
+                }
+            }
+            input[type="submit"]{
+                width: 200px;
+                height: 40px;
+                margin:  20px auto;
+                display: block;
+                font-size: 18px;
+                text-align: center;
+                border-radius: 10px;
+                padding-bottom: 2px;
+                font-weight: 700;
+                border: 3px solid $second;
+                background-color: $first;
+                color: white;
+                    &:hover {
+                        background-color: $zero;
+                        border: 3px solid $first;
+                        cursor: pointer;
+                    }
+            }
+            .alert{
+                height: 50px;
+                width: 500px;
+                font-size: 18px;
+                color: white;
+                text-align: center;
+                margin: 10px auto 0px;
+                line-height: 50px;
+                border-radius: 10px;
+            }
+            .yes{
+                background-color: #13a813;
+            }
+            .no{
+                background-color: $first;
             }
         }
     }
@@ -281,7 +378,6 @@ header {
                 }
 
             }
-
         }
     }
 }

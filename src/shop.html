@@ -45,6 +45,17 @@
                         <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button>Zamów</button></div>
                     </div>
                 </div>
+                <div class="orderCont">
+                    <form>
+                        <select>
+                            <option v-for="(product, index) in products" v-bind:value="product.name">{{product.name}}</option>
+                        </select>
+                        <input type="text">
+                        <input type="email">
+                        <textarea></textarea>
+                        <input type="submit" value="Zamów">
+                    </form>
+                </div>
             </section>
         </article>
         <article>

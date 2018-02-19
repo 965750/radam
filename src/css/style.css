@@ -1,7 +1,10 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Roboto', sans-serif; }
+
+a:link {
+  text-decoration: none; }
 
 header #mainNav {
   width: 100%;
@@ -96,7 +99,7 @@ header #mainNav {
     background-color: red;
     width: 100%;
     height: 100%;
-    background: url(../img/background.jpg) no-repeat;
+    background: url(../img/grafiki/ipc-header-nome-allproduct_new.jpg) no-repeat;
     background-size: cover;
     opacity: 0.4;
     -webkit-box-shadow: 0 5px 15px #5c5c5c;
@@ -137,7 +140,47 @@ header #mainNav {
                 animation: arrowDown 2s infinite; }
 
 .firma {
-  height: 600px; }
+  min-height: 600px; }
+  .firma .orderCont {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    display: block; }
+    .firma .orderCont form select {
+      width: 600px;
+      height: 40px;
+      margin: auto;
+      display: block;
+      border-radius: 10px;
+      padding: 5px;
+      border: 3px solid #c60e0e;
+      background-color: #c60e0e;
+      color: white;
+      font-size: 20px;
+      font-weight: 700; }
+      .firma .orderCont form select:hover {
+        cursor: pointer;
+        background-color: #de1010; }
+      .firma .orderCont form select:focus {
+        outline: none; }
+      .firma .orderCont form select option {
+        background-color: #960b0b; }
+    .firma .orderCont form input[type="text"] {
+      width: 600px;
+      display: block;
+      margin: auto;
+      border: 0px solid red;
+      border-bottom: 1px solid #c60e0e;
+      height: 40px;
+      padding: 5px;
+      font-size: 20px;
+      -webkit-transition: .1s all;
+      -o-transition: .1s all;
+      transition: .1s all; }
+      .firma .orderCont form input[type="text"]:focus {
+        outline: none;
+        background-color: #f9f9f9;
+        -webkit-box-shadow: 0px 0px 3px #606060;
+                box-shadow: 0px 0px 3px #606060; }
 
 .diamondPreCont {
   position: relative;
@@ -180,12 +223,10 @@ header #mainNav {
         text-align: center;
         margin-bottom: 20px;
         font-size: 25px;
-        color: #2f2f2f;
-        font-family: 'Roboto', sans-serif; }
+        color: #2f2f2f; }
       .diamondCont .singleDiam .diamTxt p {
         text-align: center;
-        color: #2f2f2f;
-        font-family: 'Roboto', sans-serif; }
+        color: #2f2f2f; }
       .diamondCont .singleDiam .diamTxt .costCont {
         position: absolute;
         right: 10%;

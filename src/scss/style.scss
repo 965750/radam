@@ -12,7 +12,11 @@ $w2: #b9b9b9;
 * {
     margin: 0px;
     padding: 0px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 header {
@@ -109,12 +113,12 @@ header {
         background-color: red;
         width: 100%;
         height: 100%;
-        background: url(../img/background.jpg) no-repeat;
+        background: url(../img/grafiki/ipc-header-nome-allproduct_new.jpg) no-repeat;
         background-size: cover;
         opacity: 0.4;
         box-shadow: 0 5px 15px #5c5c5c;
     }
-    
+
     .toOffer {
         position: absolute;
         bottom: 15%;
@@ -153,7 +157,55 @@ header {
 
 
 .firma {
-    height: 600px;
+    min-height: 600px;
+
+    .orderCont {
+        flex-wrap: wrap;
+        display: block;
+        form {
+            
+            select {
+                width: 600px;
+                height: 40px;
+                margin: auto;
+                display: block;
+                border-radius: 10px;
+                padding: 5px;
+                border: 3px solid $first;
+                background-color: $first;
+                color: white;
+                font-size: 20px;
+                font-weight: 700;
+                &:hover{
+                    cursor: pointer;
+                    background-color: lighten($first, 5%);
+                }
+                &:focus{
+                    outline: none;
+                }
+                option{
+                    background-color: darken($first, 10%);
+                }
+            }
+            input[type="text"] {
+                width: 600px;
+                display: block;
+                margin: auto;
+                border: 0px solid red;
+                border-bottom: 1px solid $first;
+                height: 40px;
+                padding: 5px;
+                font-size: 20px;
+                transition: .1s all;
+                
+                &:focus{
+                    outline: none;
+                    background-color: #f9f9f9;
+                    box-shadow: 0px 0px 3px #606060;
+                }
+            }
+        }
+    }
 }
 
 .diamondPreCont {
@@ -194,12 +246,10 @@ header {
                 margin-bottom: 20px;
                 font-size: 25px;
                 color: $textCol;
-                font-family: 'Roboto', sans-serif;
             }
             p {
                 text-align: center;
                 color: $textCol;
-                font-family: 'Roboto', sans-serif;
             }
             .costCont {
                 position: absolute;

@@ -1,18 +1,27 @@
-$(document).ready(function(){
+$(document).ready(function () {
     
+    var firmaTop = $(".firma").offset().top;
+
+    $(".arrCont").on("click", function () {
+        $("html").animate({
+            scrollTop: firmaTop
+        }, 700,'swing');
+    });
+
+
 });
 
-$(window).on("scroll", function(){
-    
+$(window).on("scroll", function () {
+
     console.log($(window).scrollTop());
-    
-    if($(window).scrollTop() > 40){
+
+    if ($(window).scrollTop() > 40) {
         $("#mainNav").css({
             position: 'fixed',
             zIndex: 15,
             opacity: 0.8,
             height: '40px'
-            
+
         });
         $(".socialICont").css({
             height: '25px',
@@ -24,7 +33,7 @@ $(window).on("scroll", function(){
             padding: '10px',
             fontSize: '18px',
         });
-    }else{
+    } else {
         $("#mainNav").css({
             position: '',
             zIndex: 0,
@@ -42,11 +51,10 @@ $(window).on("scroll", function(){
             fontSize: '23px',
         });
     }
-    if($(window).scrollTop() > 0 && $(window).scrollTop() < 754){
+    if ($(window).scrollTop() > 0 && $(window).scrollTop() < 754) {
         $(".singleNavi").removeClass("activeNav");
         $(".singleNavi:nth-child(1)").addClass("activeNav");
-    }
-    else if($(window).scrollTop() > 755){
+    } else if ($(window).scrollTop() > 755) {
         $(".singleNavi").removeClass("activeNav");
         $(".singleNavi:nth-child(2)").addClass("activeNav");
     }

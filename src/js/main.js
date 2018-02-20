@@ -1,16 +1,13 @@
 $(document).ready(function () {
     
     var firmaTop = $(".firma").offset().top;
-
+    
     $(".arrCont").on("click", function () {
         $("html").animate({
             scrollTop: firmaTop
-        }, 700,'swing');
-    });
-
-
+        }, 700, 'swing');
+    }); 
 });
-
 $(window).on("scroll", function () {
 
     console.log($(window).scrollTop());

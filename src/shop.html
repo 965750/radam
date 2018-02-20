@@ -102,10 +102,10 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button>Zamów</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll" class="btnBuy">Zamów</button></div>
                         </div>
                     </div>
-                    <div class="orderCont">
+                    <div class="orderCont" id="orderForm">
                         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                             <select>
                             <option  v-for="(product, index) in products" v-bind:value="product.name" name="option">{{product.name}}</option>
@@ -130,6 +130,12 @@
 
             </article>
         </main>
+        <footer>
+            <div class="topFooter"></div>
+            <div class="botFooter">
+                <p>All copyrights reserved©2018</p>
+            </div>
+        </footer>
         <script src="js/app.js"></script>
     </body>
 

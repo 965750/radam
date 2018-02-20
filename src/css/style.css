@@ -144,7 +144,8 @@ header #mainNav {
   .firma .orderCont {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    display: block; }
+    display: block;
+    height: 750px; }
     .firma .orderCont form select {
       width: 600px;
       height: 40px;
@@ -343,6 +344,24 @@ header #mainNav {
           font-size: 25px;
           font-weight: 700;
           border-bottom: 2px solid #c60e0e; }
+
+footer {
+  height: 200px;
+  width: 100%;
+  background: #2e2e2e;
+  -webkit-box-shadow: 0 -5px 15px #5c5c5c;
+          box-shadow: 0 -5px 15px #5c5c5c; }
+  footer .topFooter {
+    height: 150px; }
+  footer .botFooter {
+    background: #262626;
+    height: 50px;
+    -webkit-box-shadow: 0 0px 15px #121212;
+            box-shadow: 0 0px 15px #121212; }
+    footer .botFooter p {
+      color: #555555;
+      text-align: center;
+      line-height: 50px; }
 
 @-webkit-keyframes arrowDown {
   0% {

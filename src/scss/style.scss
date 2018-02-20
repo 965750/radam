@@ -162,8 +162,9 @@ header {
     .orderCont {
         flex-wrap: wrap;
         display: block;
+        height: 750px;
         form {
-            
+
             select {
                 width: 600px;
                 height: 40px;
@@ -177,18 +178,18 @@ header {
                 font-size: 20px;
                 font-weight: 700;
                 box-sizing: border-box;
-                &:hover{
+                &:hover {
                     cursor: pointer;
                     background-color: lighten($first, 5%);
                 }
-                &:focus{
+                &:focus {
                     outline: none;
                 }
-                option{
+                option {
                     background-color: darken($first, 10%);
                 }
             }
-            label{
+            label {
                 text-align: left;
                 display: block;
                 width: 500px;
@@ -206,12 +207,12 @@ header {
                 font-size: 18px;
                 transition: .1s all;
                 box-sizing: border-box;
-                
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                     background-color: #fafafa;
                 }
-                &:focus{
+                &:focus {
                     outline: none;
                     background-color: #fdfdfd;
                     box-shadow: 0px 0px 5px #606060;
@@ -229,12 +230,12 @@ header {
                 font-size: 18px;
                 transition: .1s all;
                 box-sizing: border-box;
-                
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                     background-color: #fafafa;
                 }
-                &:focus{
+                &:focus {
                     outline: none;
                     background-color: #fdfdfd;
                     box-shadow: 0px 0px 5px #606060;
@@ -254,22 +255,22 @@ header {
                 font-size: 18px;
                 transition: .1s all;
                 box-sizing: border-box;
-                
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                     background-color: #fafafa;
                 }
-                &:focus{
+                &:focus {
                     outline: none;
                     background-color: #fdfdfd;
                     box-shadow: 0px 0px 5px #606060;
                     cursor: text;
                 }
             }
-            input[type="submit"]{
+            input[type="submit"] {
                 width: 200px;
                 height: 40px;
-                margin:  20px auto;
+                margin: 20px auto;
                 display: block;
                 font-size: 18px;
                 text-align: center;
@@ -279,13 +280,13 @@ header {
                 border: 3px solid $second;
                 background-color: $first;
                 color: white;
-                    &:hover {
-                        background-color: $zero;
-                        border: 3px solid $first;
-                        cursor: pointer;
-                    }
+                &:hover {
+                    background-color: $zero;
+                    border: 3px solid $first;
+                    cursor: pointer;
+                }
             }
-            .alert{
+            .alert {
                 height: 50px;
                 width: 500px;
                 font-size: 18px;
@@ -295,10 +296,10 @@ header {
                 line-height: 50px;
                 border-radius: 10px;
             }
-            .yes{
+            .yes {
                 background-color: #13a813;
             }
-            .no{
+            .no {
                 background-color: $first;
             }
         }
@@ -378,6 +379,26 @@ header {
                 }
 
             }
+        }
+    }
+}
+
+footer {
+    height: 200px;
+    width: 100%;
+    background: #2e2e2e;
+    box-shadow: 0 -5px 15px #5c5c5c;
+    .topFooter {
+	    height: 150px;
+}
+    .botFooter {
+        background: #262626;
+        height: 50px;
+        box-shadow: 0 0px 15px #121212;
+        p{
+            color: lighten($textCol, 15%);
+            text-align: center;
+            line-height: 50px;
         }
     }
 }

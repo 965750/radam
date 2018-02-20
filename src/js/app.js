@@ -25,10 +25,26 @@ new Vue({
     },
     methods: {
         readRefs: function () {
-            
-        }, 
+
+        },
+        buyScroll: function () {
+            var ele = document.getElementById("orderForm");
+
+            var bodyRect = document.body.getBoundingClientRect(),
+                elemRect = ele.getBoundingClientRect(),
+                offset = elemRect.top - bodyRect.top;
+                console.log(offset);
+            //scrollTo
+
+            var timerID = setInterval(function () {
+                window.scrollBy(0, 10);
+
+                if (window.pageYOffset >= offset - 50)
+                    clearInterval(timerID);
+            }, 10);
+        },
     },
     computed: {
-        
+
     }
 });

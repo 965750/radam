@@ -207,6 +207,7 @@ header {
                 font-size: 18px;
                 transition: .1s all;
                 box-sizing: border-box;
+                box-shadow: 0 2px 4px #8d8d8d;
 
                 &:hover {
                     cursor: pointer;
@@ -215,7 +216,7 @@ header {
                 &:focus {
                     outline: none;
                     background-color: #fdfdfd;
-                    box-shadow: 0px 0px 5px #606060;
+                    box-shadow: 0px 2px 5px #606060;
                     cursor: text;
                 }
             }
@@ -230,6 +231,7 @@ header {
                 font-size: 18px;
                 transition: .1s all;
                 box-sizing: border-box;
+                box-shadow: 0 2px 4px #8d8d8d;
 
                 &:hover {
                     cursor: pointer;
@@ -238,7 +240,7 @@ header {
                 &:focus {
                     outline: none;
                     background-color: #fdfdfd;
-                    box-shadow: 0px 0px 5px #606060;
+                    box-shadow: 0px 2px 5px #606060;
                     cursor: text;
                 }
             }
@@ -255,6 +257,8 @@ header {
                 font-size: 18px;
                 transition: .1s all;
                 box-sizing: border-box;
+                resize: none;
+                box-shadow: 0 2px 4px #8d8d8d;
 
                 &:hover {
                     cursor: pointer;
@@ -263,7 +267,7 @@ header {
                 &:focus {
                     outline: none;
                     background-color: #fdfdfd;
-                    box-shadow: 0px 0px 5px #606060;
+                    box-shadow: 0px 2px 5px #606060;
                     cursor: text;
                 }
             }

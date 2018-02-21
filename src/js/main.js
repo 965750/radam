@@ -6,7 +6,40 @@ $(document).ready(function () {
         $("html").animate({
             scrollTop: firmaTop
         }, 700, 'swing');
-    }); 
+    });
+    // Site MAP footer
+    $("#FmapI li:nth-child(1)").on("click", function () {
+        $("html").animate({
+            scrollTop: 0
+        }, 700, 'swing');
+    });
+    $("#FmapI li:nth-child(2)").on("click", function () {
+        window.location.replace("shop.html");
+    });
+    $("#FmapI li:nth-child(3)").on("click", function () {
+        window.location.replace("shop.html");
+    });
+    $("#FmapI li:nth-child(4)").on("click", function () {
+        $("html").animate({
+            scrollTop: firmaTop
+        }, 700, 'swing');
+    });
+    $("#FmapS li:nth-child(1)").on("click", function () {
+        window.location.replace("index.html");
+    });
+    $("#FmapS li:nth-child(2)").on("click", function () {
+        $("body").animate({
+            scrollTop: 0
+        }, 700, 'swing');
+    });
+    $("#FmapS li:nth-child(3)").on("click", function () {
+        $("body").animate({
+            scrollTop: $(".orderCont").offset().top
+        }, 700, 'swing');
+    });
+    $("#FmapS li:nth-child(4)").on("click", function () {
+        window.location.replace("index.html");
+    });
 });
 $(window).on("scroll", function () {
 

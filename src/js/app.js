@@ -30,10 +30,13 @@ new Vue({
         buyScroll: function (nameOfProduct) {
            
             //offset = windowY
+            
             var ele = document.getElementById("orderForm");
             var bodyRect = document.body.getBoundingClientRect(),
                 elemRect = ele.getBoundingClientRect(),
                 offset = elemRect.top - bodyRect.top;
+            console.log(offset);
+            alert(ele.scrollTop)
             //scrollTo
             
             var timerID = setInterval(function () {
@@ -42,11 +45,14 @@ new Vue({
                 if (window.pageYOffset >= offset - 50)
                     clearInterval(timerID);
             }, 5);
+            window.addEventListener("scroll", function(){
+                
+            });
+            
             //change select
             
             var sel = document.getElementById('sel');
             sel.value=nameOfProduct;
-
         },
     },
     computed: {

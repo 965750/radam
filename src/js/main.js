@@ -81,11 +81,4 @@ $(window).on("scroll", function () {
             fontSize: '23px',
         });
     }
-    if ($(window).scrollTop() > 0 && $(window).scrollTop() < 754) {
-        $(".singleNavi").removeClass("activeNav");
-        $(".singleNavi:nth-child(1)").addClass("activeNav");
-    } else if ($(window).scrollTop() > 755) {
-        $(".singleNavi").removeClass("activeNav");
-        $(".singleNavi:nth-child(2)").addClass("activeNav");
-    }
 });

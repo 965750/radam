@@ -36,7 +36,7 @@ new Vue({
                 elemRect = ele.getBoundingClientRect(),
                 offset = elemRect.top - bodyRect.top;
             console.log(offset);
-            alert(ele.scrollTop)
+    
             //scrollTo
             
             var timerID = setInterval(function () {

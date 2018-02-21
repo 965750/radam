@@ -140,7 +140,7 @@ header #mainNav {
                 animation: arrowDown 2s infinite; }
 
 .firma {
-  min-height: 600px; }
+  min-height: 800px; }
   .firma .orderCont {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

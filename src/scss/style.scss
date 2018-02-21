@@ -443,6 +443,10 @@ footer {
                     width: 90px;
                     line-height: 22px;
                     border-bottom: 1px solid darken($textCol, 5%);
+                    &:hover{
+                        color: lighten($textCol, 15%);
+                        cursor: pointer;
+                    }
                 }
             }
         }

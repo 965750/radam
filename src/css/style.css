@@ -406,6 +406,9 @@ footer {
           width: 90px;
           line-height: 22px;
           border-bottom: 1px solid #222222; }
+          footer .topFooter .topFooterMid ul li:hover {
+            color: #555555;
+            cursor: pointer; }
     footer .topFooter .topFooterRight {
       width: 40%;
       -webkit-box-sizing: border-box;

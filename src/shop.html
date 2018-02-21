@@ -102,12 +102,12 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll" class="btnBuy">Zamów</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">Zamów</button></div>
                         </div>
                     </div>
                     <div class="orderCont" id="orderForm">
                         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                            <select>
+                            <select id="sel">
                             <option  v-for="(product, index) in products" v-bind:value="product.name" name="option">{{product.name}}</option>
                             </select>
                             <?php if($msg != ''): ?>

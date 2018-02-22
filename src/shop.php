@@ -24,18 +24,20 @@
 			} else {
 				// Passed
 				$toEmail = 'aventhelast@gmail.com';
-				$subject = 'Contact Request From '.$name;
-				$body = '<h2>Contact Request</h2>
-					<h4>Name</h4><p>'.$name.'</p>
-					<h4>Email</h4><p>'.$email.'</p>
-                    <h4>Subject</h4><p>'.$option.'</p>
-					<h4>Message</h4><p>'.$message.'</p>
-				';
+				$subject = 'Zamówienie Radam '.$name;
+				$body = 'Zamówienie Radam'."\n"
+					.'Imie: '.$name."\n"
+					.'Email: '.$email."\n"
+                    .'Produkt: '.$option."\n"
+					.'Wiadomość: '.$message;
 
 
 				// Email Headers
-				$headers = "MIME-Version: 1.0" ."\r\n";
-				$headers .="Content-Type:text/html;charset=UTF-8" . "\r\n";
+				$headers .= "Organization: Sender Organization\r\n";
+                $headers .= "MIME-Version: 1.0\r\n";
+                $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+                $headers .= "X-Priority: 3\r\n";
+                $headers .= "X-Mailer: PHP". phpversion() ."\r\n"; 
 
 				// Additional Headers
 				$headers .= "From: " .$name. "<".$email.">". "\r\n";
@@ -49,13 +51,12 @@
 					// Failed
 					$msg = 'Your email was not sent';
 					$msgClass = 'no';
-
 				}
 			}
 		} else {
 			// Failed
 			$msg = 'Please fill in all fields';
-			$msgClass = 'alert-danger';
+			$msgClass = 'no';
 		}
 	}
 ?>
@@ -113,8 +114,8 @@
                     </div>
                     <div class="orderCont" id="orderForm">
                         <form method="post" action="shop.php">
-                            <select id="sel">
-                            <option  v-for="(product, index) in products" v-bind:value="product.name" name="option">{{product.name}}</option>
+                            <select id="sel" name="option">
+                            <option  v-for="(product, index) in products" v-bind:value="product.name">{{product.name}}</option>
                             </select>
                             <?php if($msg != ''): ?>
                             <div class="alert <?php echo $msgClass; ?>">

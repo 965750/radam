@@ -100,6 +100,9 @@
             </nav>
         </header>
         <main class="firma">
+            <div class="alert alertUp <?php echo $msgClass; ?>">
+                                <?php echo $msg; ?>
+            </div>
             <article class="diamondPreCont">
                 <section class="diamondCont" id="vue-app">
                     <div v-for="(product, index) in products" class="singleDiam">

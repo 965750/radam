@@ -14,9 +14,11 @@ $w2: #b9b9b9;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
 }
+
 a:link {
     text-decoration: none;
 }
+
 header {
     #mainNav {
         width: 100%;
@@ -154,7 +156,7 @@ header {
 
 
 .firma {
-    min-height: 800px;
+    min-height: 900px;
 
     .orderCont {
         flex-wrap: wrap;
@@ -287,24 +289,37 @@ header {
                     cursor: pointer;
                 }
             }
-            .alert {
-                height: 50px;
-                width: 500px;
-                font-size: 18px;
-                color: white;
-                text-align: center;
-                margin: 10px auto 0px;
-                line-height: 50px;
-                border-radius: 10px;
-            }
-            .yes {
-                background-color: #13a813;
-            }
-            .no {
-                background-color: $first;
-            }
         }
     }
+}
+
+.alert {
+    height: 50px;
+    width: 300px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin: 10px auto 0px;
+    line-height: 50px;
+    border-radius: 10px;
+    animation: alertMsg 5s forwards;
+}
+.alertUp{
+    position: fixed;
+    top: 20%;
+    left: 0%;
+    width: 250px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    z-index: 12;
+}
+
+.yes {
+    background-color: #13a813;
+}
+
+.no {
+    background-color: $first;
 }
 
 .diamondPreCont {
@@ -409,11 +424,11 @@ footer {
                 border-radius: 50%;
                 margin: 0px 15px -5px;
             }
-            .footerZap{
+            .footerZap {
                 color: lighten($textCol, 10%);
                 margin-left: -5px;
             }
-            .singleZap{
+            .singleZap {
                 width: 100%;
                 margin-bottom: 10px;
             }
@@ -433,14 +448,14 @@ footer {
                 color: lighten($textCol, 10%);
                 margin: 20px 10px 5px;
             }
-            ul{
+            ul {
                 margin-left: 10px;
-                li{
+                li {
                     color: lighten($textCol, 10%);
                     width: 90px;
                     line-height: 22px;
                     border-bottom: 1px solid darken($textCol, 5%);
-                    &:hover{
+                    &:hover {
                         color: lighten($textCol, 15%);
                         cursor: pointer;
                     }
@@ -458,7 +473,7 @@ footer {
                 margin: 15px 0px 5px;
                 font-size: 20px;
             }
-            p{
+            p {
                 color: lighten($textCol, 10%);
                 text-align: center;
             }
@@ -485,5 +500,17 @@ footer {
     }
     100% {
         transform: translateY(0px);
+    }
+}
+@keyframes alertMsg {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none !important;
     }
 }

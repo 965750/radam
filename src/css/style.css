@@ -140,7 +140,7 @@ header #mainNav {
                 animation: arrowDown 2s infinite; }
 
 .firma {
-  min-height: 800px; }
+  min-height: 900px; }
   .firma .orderCont {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -268,19 +268,33 @@ header #mainNav {
         background-color: #d62727;
         border: 3px solid #c60e0e;
         cursor: pointer; }
-    .firma .orderCont form .alert {
-      height: 50px;
-      width: 500px;
-      font-size: 18px;
-      color: white;
-      text-align: center;
-      margin: 10px auto 0px;
-      line-height: 50px;
-      border-radius: 10px; }
-    .firma .orderCont form .yes {
-      background-color: #13a813; }
-    .firma .orderCont form .no {
-      background-color: #c60e0e; }
+
+.alert {
+  height: 50px;
+  width: 300px;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  margin: 10px auto 0px;
+  line-height: 50px;
+  border-radius: 10px;
+  -webkit-animation: alertMsg 5s forwards;
+          animation: alertMsg 5s forwards; }
+
+.alertUp {
+  position: fixed;
+  top: 20%;
+  left: 0%;
+  width: 250px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  z-index: 12; }
+
+.yes {
+  background-color: #13a813; }
+
+.no {
+  background-color: #c60e0e; }
 
 .diamondPreCont {
   position: relative;
@@ -454,3 +468,21 @@ footer {
   100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px); } }
+
+@-webkit-keyframes alertMsg {
+  0% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    display: none !important; } }
+
+@keyframes alertMsg {
+  0% {
+    opacity: 1; }
+  70% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    display: none !important; } }

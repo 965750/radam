@@ -28,31 +28,37 @@ new Vue({
 
         },
         buyScroll: function (nameOfProduct) {
-           
+
             //offset = windowY
-            
+
             var ele = document.getElementById("orderForm");
             var bodyRect = document.body.getBoundingClientRect(),
                 elemRect = ele.getBoundingClientRect(),
                 offset = elemRect.top - bodyRect.top;
             console.log(offset);
-    
-            //scrollTo
-            
-            var timerID = setInterval(function () {
-                window.scrollBy(0, 12);
 
-                if (window.pageYOffset >= offset - 50)
+            //scrollTo
+
+            var timerID = setInterval(function () {
+                if (window.pageYOffset >= offset - 80) {
                     clearInterval(timerID);
+                } else {
+
+                    window.scrollBy(0, 10);
+                    setTimeout(function(){
+                        clearInterval(timerID);
+                        alert("cleard");
+                    }, 2000);
+                }
             }, 5);
-            window.addEventListener("scroll", function(){
-                
+            window.addEventListener("scroll", function () {
+
             });
-            
+
             //change select
-            
+
             var sel = document.getElementById('sel');
-            sel.value=nameOfProduct;
+            sel.value = nameOfProduct;
         },
     },
     computed: {

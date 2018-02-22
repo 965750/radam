@@ -43,7 +43,7 @@ $(document).ready(function () {
 });
 $(window).on("scroll", function () {
 
-    console.log($(window).scrollTop());
+    console.log(window.pageYOffset);
 
     if ($(window).scrollTop() > 40) {
         $("#mainNav").css({

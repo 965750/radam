@@ -15,10 +15,12 @@
 		if(!empty($email) && !empty($name) && !empty($message)){
 			// Passed
 			// Check Email
+
 			if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
 				// Failed
 				$msg = 'Please use a valid email';
 				$msgClass = 'no';
+
 			} else {
 				// Passed
 				$toEmail = 'aventhelast@gmail.com';
@@ -29,6 +31,7 @@
                     <h4>Subject</h4><p>'.$option.'</p>
 					<h4>Message</h4><p>'.$message.'</p>
 				';
+
 
 				// Email Headers
 				$headers = "MIME-Version: 1.0" ."\r\n";
@@ -41,10 +44,12 @@
 					// Email Sent
 					$msg = 'Your email has been sent';
 					$msgClass = 'yes';
+
 				} else {
 					// Failed
 					$msg = 'Your email was not sent';
 					$msgClass = 'no';
+
 				}
 			}
 		} else {
@@ -107,7 +112,7 @@
                         </div>
                     </div>
                     <div class="orderCont" id="orderForm">
-                        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                        <form method="post" action="shop.php">
                             <select id="sel">
                             <option  v-for="(product, index) in products" v-bind:value="product.name" name="option">{{product.name}}</option>
                             </select>
@@ -122,7 +127,7 @@
                             <input id="email" name="email" type="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
                             <label class="labelHeader" for="msg">Wiadomość</label>
                             <textarea name="message" id="msg"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
-                            <input type="submit" value="Złóż Zamówienie">
+                            <input type="submit" name="submit" value="Złóż Zamówienie">
                         </form>
                     </div>
                 </section>

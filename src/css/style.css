@@ -140,7 +140,10 @@ header #mainNav {
                 animation: arrowDown 2s infinite; }
 
 .firma {
-  min-height: 900px; }
+  min-height: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
   .firma .orderCont {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -279,7 +282,8 @@ header #mainNav {
   line-height: 50px;
   border-radius: 10px;
   -webkit-animation: alertMsg 5s forwards;
-          animation: alertMsg 5s forwards; }
+          animation: alertMsg 5s forwards;
+  display: none; }
 
 .alertUp {
   position: fixed;
@@ -299,8 +303,38 @@ header #mainNav {
 .diamondPreCont {
   position: relative;
   height-min: 600px;
-  max-width: 1200px;
+  max-width: 70%;
   margin: auto; }
+
+.categoryCont {
+  max-height: 200px;
+  min-width: 20%;
+  margin: 150px auto 0px;
+  background-color: #f3f3f3;
+  border: 3px solid #d4d4d4;
+  -webkit-box-shadow: 0px 2px 5px #4e4e4e;
+          box-shadow: 0px 2px 5px #4e4e4e; }
+  .categoryCont h2 {
+    text-align: center;
+    margin-top: 10px;
+    background-color: #d4d4d4;
+    color: #2f2f2f; }
+  .categoryCont ul {
+    list-style: none;
+    text-align: left;
+    padding: 15px; }
+    .categoryCont ul li {
+      border-left: 3px solid #d4d4d4;
+      padding: 5px;
+      color: #2f2f2f;
+      font-size: 16px;
+      -webkit-transition: .1s all;
+      -o-transition: .1s all;
+      transition: .1s all; }
+      .categoryCont ul li:hover {
+        color: white;
+        background-color: #b10b0b;
+        cursor: pointer; }
 
 .diamondCont {
   padding-top: 150px; }

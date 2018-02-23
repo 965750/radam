@@ -157,6 +157,7 @@ header {
 
 .firma {
     min-height: 900px;
+    display: flex;
 
     .orderCont {
         flex-wrap: wrap;
@@ -303,6 +304,7 @@ header {
     line-height: 50px;
     border-radius: 10px;
     animation: alertMsg 5s forwards;
+    display: none;
 }
 .alertUp{
     position: fixed;
@@ -325,8 +327,39 @@ header {
 .diamondPreCont {
     position: relative;
     height-min: 600px;
-    max-width: 1200px;
+    max-width: 70%;
     margin: auto;
+}
+.categoryCont {
+	max-height: 200px;
+    min-width: 20%;
+    margin: 150px auto 0px;
+    background-color: $w0;
+    border: 3px solid $w1;
+    box-shadow: 0px 2px 5px #4e4e4e;
+    h2{
+        text-align: center;
+        margin-top: 10px;
+        background-color: $w1;
+        color: $textCol;
+    }
+    ul{
+        list-style: none;
+        text-align: left;
+        padding: 15px;
+        li{
+            border-left: 3px solid $w1;
+            padding: 5px;
+            color: $textCol;
+            font-size: 16px;
+            transition: .1s all;
+            &:hover{
+                color: white;
+                background-color: $second;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .diamondCont {

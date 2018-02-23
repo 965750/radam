@@ -51,7 +51,6 @@ $(window).on("scroll", function () {
             zIndex: 15,
             opacity: 0.8,
             height: '40px'
-
         });
         $(".socialICont").css({
             height: '25px',

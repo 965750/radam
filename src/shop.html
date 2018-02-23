@@ -99,13 +99,41 @@
                 </div>
             </nav>
         </header>
-        <main class="firma">
+        <main class="firma" id="vue-app">
             <div class="alert alertUp <?php echo $msgClass; ?>">
                                 <?php echo $msg; ?>
             </div>
+            <aside class="categoryCont">
+            <h2>Kategorie</h2>
+                <ul>
+                    <li id="chem" v-on:click="categoryChemia">Chemia</li>
+                    <li id="masz" v-on:click="categoryMaszyny">Maszyny</li>
+                    <li id="serw" v-on:click="categorySerwis">Serwis Maszyn</li>
+                </ul>
+            </aside>
             <article class="diamondPreCont">
-                <section class="diamondCont" id="vue-app">
-                    <div v-for="(product, index) in products" class="singleDiam">
+                <section class="diamondCont">
+                    <div v-for="(product, index) in productsChemia" class="singleDiam" v-show="chemia">
+                        <div class="diamImg" v-show="chemia" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
+                        <div class="diamTxt">
+                            <h3>{{product.name}}</h3>
+                            <p>
+                                {{product.desc}}
+                            </p>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">Zamów</button></div>
+                        </div>
+                    </div>
+                    <div v-for="(product, index) in productsMaszyny" class="singleDiam" v-show="maszyny">
+                        <div class="diamImg" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
+                        <div class="diamTxt">
+                            <h3>{{product.name}}</h3>
+                            <p>
+                                {{product.desc}}
+                            </p>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">Zamów</button></div>
+                        </div>
+                    </div>
+                    <div v-for="(product, index) in productsSerwis" class="singleDiam" v-show="serwis">
                         <div class="diamImg" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
                         <div class="diamTxt">
                             <h3>{{product.name}}</h3>
@@ -135,9 +163,6 @@
                         </form>
                     </div>
                 </section>
-            </article>
-            <article>
-
             </article>
         </main>
         <footer>

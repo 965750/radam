@@ -119,15 +119,17 @@
                                 <div class="deleteBtn"><button v-on:click="deleteProduct(index)">Usuń</button></div>
                             </div>
                         </div>
-                        <div v-show="!empty" class="fullCost"><span>{{ fullCost }} PLN</span></div>
+                        <div class="basketLeft" v-on:click="changeBuy"><i class="fas fa-caret-left"></i>
+                            <i class="fas basketI fa-shopping-basket"></i></div>
+                        <div v-show="empty" class="fullCostRight"><span>{{ fullCost }} PLN</span></div>
                     </div>
                 </div>
             </article>
-            <aside class="categoryCont">
-                <div class="basketCont">
-                    <i class="fas basketI fa-shopping-basket"></i>
+            <aside v-show="buy" class="categoryCont">
+                <div class="basketCont" v-on:click="changeBuy">
+                    <i id="baskInCat" class="fas basketI fa-shopping-basket"></i>
                 </div>
-                <div v-show="buy">
+                <div class="cats">
                 <h2>Kategorie</h2>
                 <ul>
                     <li id="chem" v-on:click="categoryChemia">Chemia</li>
@@ -145,7 +147,7 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">Zamów</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">+</button></div>
                         </div>
                     </div>
                     <div v-for="(product, index) in productsMaszyny" class="singleDiam" v-show="maszyny">
@@ -155,7 +157,7 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">Zamów</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">+</button></div>
                         </div>
                     </div>
                     <div v-for="(product, index) in productsSerwis" class="singleDiam" v-show="serwis">
@@ -165,13 +167,13 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">Zamów</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">+</button></div>
                         </div>
                     </div>
                     <div class="orderCont" id="orderForm">
                         <form method="post" action="shop.php">
                             <select id="sel" name="option">
-                            <option  v-for="(product, index) in products" v-bind:value="product.name">{{product.name}}</option>
+                            
                             </select>
                             <?php if($msg != ''): ?>
                             <div class="alert <?php echo $msgClass; ?>">

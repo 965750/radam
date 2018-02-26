@@ -1,7 +1,15 @@
 $(document).ready(function () {
-    
+    $(".btnBuy").on("click", function () {
+        $("#baskInCat").addClass("basketPlus");
+        setTimeout(refreshOneUp, 500);
+
+        function refreshOneUp() {
+            $("#baskInCat").removeClass("basketPlus");
+        }
+    });
+
     var firmaTop = $(".firma").offset().top;
-    
+
     $(".arrCont").on("click", function () {
         $("html").animate({
             scrollTop: firmaTop

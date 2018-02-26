@@ -3,7 +3,7 @@ new Vue({
     data: {
         buy: true,
         empty: true,
-        fullCost: 0,
+        fullCost: 100,
         cardCount: 0,
         chemia: true,
         maszyny: false,
@@ -58,20 +58,43 @@ new Vue({
             {
                 name: "test pro 2",
                 price: "24.27",
-            }
-            
+            },
+            {
+                name: "test pro 1",
+                price: "23.27",
+            },
+            {
+                name: "test pro 2",
+                price: "24.27",
+            },
+            {
+                name: "test pro 1",
+                price: "23.27",
+            },
+            {
+                name: "test pro 2",
+                price: "24.27",
+            },
+            {
+                name: "test pro 1",
+                price: "23.27",
+            },
+
         ],
     },
     methods: {
-        deleteProduct: function(index){
-            
+        changeBuy: function() {
+            this.buy = !this.buy;
+        },
+        deleteProduct: function (index) {
+
             this.cardCount -= 1;
-            
+
             this.fullCost = this.fullCost - this.card[index].price;
             this.fullCost = Math.round(this.fullCost * 100) / 100;
             this.card.splice(index, 1);
-            
-            if(this.cardCount == 0){
+
+            if (this.cardCount == 0) {
                 this.empty = true;
                 this.fullCost = 0;
             }
@@ -82,7 +105,7 @@ new Vue({
         buyScroll: function (nameOfProduct) {
 
             //offset = windowY
-
+            
             var ele = document.getElementById("orderForm");
             var bodyRect = document.body.getBoundingClientRect(),
                 elemRect = ele.getBoundingClientRect(),
@@ -91,20 +114,20 @@ new Vue({
 
             //scrollTo
 
-            var timerID = setInterval(function () {
-                if (window.pageYOffset >= offset - 80) {
-                    clearInterval(timerID);
-                } else {
+            //var timerID = setInterval(function () {
+                //if (window.pageYOffset >= offset - 80) {
+                  //  clearInterval(timerID);
+                //} else {
 
-                    window.scrollBy(0, 10);
-                    setTimeout(function () {
-                        clearInterval(timerID);
-                    }, 1500);
-                }
-            }, 5);
-            window.addEventListener("scroll", function () {
+                  //  window.scrollBy(0, 10);
+                    //setTimeout(function () {
+                      //  clearInterval(timerID);
+                    //}, 1500);
+                //}
+            //}, 5);
+            //window.addEventListener("scroll", function () {
 
-            });
+            //});
 
             //change select
 
@@ -115,34 +138,16 @@ new Vue({
             this.chemia = true;
             this.maszyny = false;
             this.serwis = false;
-
-            if (this.products.category == 1) {
-                this.products.show = true;
-            } else {
-                this.products.show = true;
-            }
         },
         categoryMaszyny: function () {
             this.chemia = false;
             this.maszyny = true;
             this.serwis = false;
-
-            if (this.products.category == 2) {
-                this.products.show = true;
-            } else {
-                this.products.show = true;
-            }
         },
         categorySerwis: function () {
             this.chemia = false;
             this.maszyny = false;
             this.serwis = true;
-
-            if (this.products.category == 3) {
-                this.products.show = true;
-            } else {
-                this.products.show = true;
-            }
         },
     },
     computed: {

@@ -300,6 +300,56 @@ header #mainNav {
 .no {
   background-color: #c60e0e; }
 
+.cardPreCont {
+  border-top: 3px solid #d4d4d4;
+  width: 80%;
+  min-height: 200px;
+  max-height: 400px;
+  margin: 150px auto 0px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 5px #4e4e4e;
+          box-shadow: 0px 2px 5px #4e4e4e;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  .cardPreCont .cartCont {
+    padding: 5px; }
+    .cardPreCont .cartCont p {
+      text-align: center;
+      color: #2f2f2f;
+      font-size: 20px; }
+    .cardPreCont .cartCont .singlePrice {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d4d4d4;
+      margin: 10px 0px; }
+    .cardPreCont .cartCont span {
+      color: #2f2f2f;
+      font-size: 17px; }
+    .cardPreCont .cartCont .singlePriceNo {
+      font-weight: 700;
+      font-size: 13px;
+      min-width: 100px; }
+    .cardPreCont .cartCont .singlePriceName {
+      text-transform: uppercase;
+      padding-left: 15px;
+      width: 150px; }
+    .cardPreCont .cartCont .singlePriceSpace {
+      width: 100%; }
+    .cardPreCont .cartCont .deleteBtn button {
+      width: 50px;
+      height: 20px;
+      background-color: #c60e0e;
+      border: 2px solid red;
+      border-radius: 5px;
+      color: white; }
+      .cardPreCont .cartCont .deleteBtn button:hover {
+        background-color: #ef1818;
+        cursor: pointer; }
+
 .diamondPreCont {
   position: relative;
   height-min: 600px;
@@ -307,13 +357,29 @@ header #mainNav {
   margin: auto; }
 
 .categoryCont {
-  max-height: 200px;
+  max-height: 300px;
   min-width: 20%;
   margin: 150px auto 0px;
   background-color: #f3f3f3;
   border: 3px solid #d4d4d4;
   -webkit-box-shadow: 0px 2px 5px #4e4e4e;
           box-shadow: 0px 2px 5px #4e4e4e; }
+  .categoryCont .basketCont {
+    height: 90px;
+    width: 90px;
+    margin: auto;
+    padding-top: 10px; }
+    .categoryCont .basketCont .basketI {
+      height: 90px;
+      font-size: 80px;
+      margin: auto;
+      display: block;
+      width: 90px;
+      color: #ebebeb;
+      background-color: #d4d4d4;
+      border-radius: 50%;
+      -webkit-box-shadow: 0px 0px 5px #c60e0e;
+              box-shadow: 0px 0px 5px #c60e0e; }
   .categoryCont h2 {
     text-align: center;
     margin-top: 10px;

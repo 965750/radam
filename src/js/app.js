@@ -1,6 +1,10 @@
 new Vue({
     el: '#vue-app',
     data: {
+        buy: true,
+        empty: true,
+        fullCost: 0,
+        cardCount: 0,
         chemia: true,
         maszyny: false,
         serwis: false,
@@ -46,8 +50,32 @@ new Vue({
                 img: 'img/512.jpg',
             },
         ],
+        card: [
+            {
+                name: "test pro 1",
+                price: "23.27",
+            },
+            {
+                name: "test pro 2",
+                price: "24.27",
+            }
+            
+        ],
     },
     methods: {
+        deleteProduct: function(index){
+            
+            this.cardCount -= 1;
+            
+            this.fullCost = this.fullCost - this.card[index].price;
+            this.fullCost = Math.round(this.fullCost * 100) / 100;
+            this.card.splice(index, 1);
+            
+            if(this.cardCount == 0){
+                this.empty = true;
+                this.fullCost = 0;
+            }
+        },
         readRefs: function () {
 
         },
@@ -92,7 +120,6 @@ new Vue({
                 this.products.show = true;
             } else {
                 this.products.show = true;
-                console.log('chemia2');
             }
         },
         categoryMaszyny: function () {
@@ -104,7 +131,6 @@ new Vue({
                 this.products.show = true;
             } else {
                 this.products.show = true;
-                console.log('maszyny2');
             }
         },
         categorySerwis: function () {
@@ -116,7 +142,6 @@ new Vue({
                 this.products.show = true;
             } else {
                 this.products.show = true;
-                console.log('ser2');
             }
         },
     },

@@ -101,17 +101,42 @@
         </header>
         <main class="firma" id="vue-app">
             <div class="alert alertUp <?php echo $msgClass; ?>">
-                                <?php echo $msg; ?>
+                <?php echo $msg; ?>
             </div>
+            <article class="cardPreCont" v-show="!buy">
+                <div>
+                    <div class="cartCont">
+                        <p class="emptyText" v-show="!empty">First You need to add some products</p>
+                        <div v-for="(single, index) in card">
+                            <div class="singlePrice">
+                                <div class="singlePriceNo">
+                                    <span>{{ single.price }} PLN</span>
+                                </div>
+                                <div class="singlePriceName">
+                                    <span>{{ single.name }}</span>
+                                </div>
+                                <div class="singlePriceSpace"></div>
+                                <div class="deleteBtn"><button v-on:click="deleteProduct(index)">Usuń</button></div>
+                            </div>
+                        </div>
+                        <div v-show="!empty" class="fullCost"><span>{{ fullCost }} PLN</span></div>
+                    </div>
+                </div>
+            </article>
             <aside class="categoryCont">
-            <h2>Kategorie</h2>
+                <div class="basketCont">
+                    <i class="fas basketI fa-shopping-basket"></i>
+                </div>
+                <div v-show="buy">
+                <h2>Kategorie</h2>
                 <ul>
                     <li id="chem" v-on:click="categoryChemia">Chemia</li>
                     <li id="masz" v-on:click="categoryMaszyny">Maszyny</li>
                     <li id="serw" v-on:click="categorySerwis">Serwis Maszyn</li>
                 </ul>
+                </div>
             </aside>
-            <article class="diamondPreCont">
+            <article class="diamondPreCont" v-show="buy">
                 <section class="diamondCont">
                     <div v-for="(product, index) in productsChemia" class="singleDiam" v-show="chemia">
                         <div class="diamImg" v-show="chemia" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>

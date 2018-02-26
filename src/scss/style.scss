@@ -306,7 +306,8 @@ header {
     animation: alertMsg 5s forwards;
     display: none;
 }
-.alertUp{
+
+.alertUp {
     position: fixed;
     top: 20%;
     left: 0%;
@@ -324,36 +325,112 @@ header {
     background-color: $first;
 }
 
+.cardPreCont {
+    border-top: 3px solid $w1;
+    width: 80%;
+    min-height: 200px;
+    max-height: 400px;
+    margin: 150px auto 0px;
+    background-color: $w0;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px #4e4e4e;
+    padding: 10px;
+    box-sizing: border-box;
+    .cartCont {
+        padding: 5px;
+        p {
+            text-align: center;
+            color: $textCol;
+            font-size: 20px;
+        }
+        .singlePrice {
+            display: flex;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $w1;
+            margin: 10px 0px;
+        }
+        span {
+            color: $textCol;
+            font-size: 17px;
+        }
+        .singlePriceNo {
+            font-weight: 700;
+            font-size: 13px;
+            min-width: 100px;
+        }
+        .singlePriceName {
+            text-transform: uppercase;
+            padding-left: 15px;
+            width: 150px;
+        }
+        .singlePriceSpace {
+            width: 100%;
+        }
+        .deleteBtn {
+            button {
+                width: 50px;
+                height: 20px;
+                background-color: $first;
+                border: 2px solid red;
+                border-radius: 5px;
+                color: white;
+                &:hover {
+                    background-color: lighten($first, 10%);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
 .diamondPreCont {
     position: relative;
     height-min: 600px;
     max-width: 70%;
     margin: auto;
 }
+
 .categoryCont {
-	max-height: 200px;
+    max-height: 300px;
     min-width: 20%;
     margin: 150px auto 0px;
     background-color: $w0;
     border: 3px solid $w1;
     box-shadow: 0px 2px 5px #4e4e4e;
-    h2{
+    .basketCont {
+        height: 90px;
+        width: 90px;
+        margin: auto;
+        padding-top: 10px;
+        .basketI{
+            height: 90px;
+            font-size: 80px;
+            margin: auto;
+            display: block;
+            width: 90px;
+            color: $w05;
+            background-color: $w1;
+            border-radius: 50%;
+            box-shadow: 0px 0px 5px $first;
+        }
+    }
+    h2 {
         text-align: center;
         margin-top: 10px;
         background-color: $w1;
         color: $textCol;
     }
-    ul{
+    ul {
         list-style: none;
         text-align: left;
         padding: 15px;
-        li{
+        li {
             border-left: 3px solid $w1;
             padding: 5px;
             color: $textCol;
             font-size: 16px;
             transition: .1s all;
-            &:hover{
+            &:hover {
                 color: white;
                 background-color: $second;
                 cursor: pointer;
@@ -535,6 +612,7 @@ footer {
         transform: translateY(0px);
     }
 }
+
 @keyframes alertMsg {
     0% {
         opacity: 1;

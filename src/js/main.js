@@ -7,7 +7,6 @@ $(document).ready(function () {
             $("#baskInCat").removeClass("basketPlus");
         }
     });
-
     var firmaTop = $(".firma").offset().top;
 
     $(".arrCont").on("click", function () {

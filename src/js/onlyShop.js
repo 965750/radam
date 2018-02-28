@@ -1,6 +1,5 @@
 $(document).ready(function(){
     
-    
 $(window).on("scroll", function(){
     
     var orderCont = $(".orderCont").offset().top - 200;
@@ -9,9 +8,6 @@ $(window).on("scroll", function(){
         $(".singleNavi").removeClass("activeNav");
         $("#shop").addClass("activeNav");
         
-    } else if ($(window).scrollTop() > orderCont) {
-        $(".singleNavi").removeClass("activeNav");
-        $("#ord").addClass("activeNav");
-    }
+    } else {}
 });    
 });

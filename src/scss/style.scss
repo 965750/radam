@@ -153,16 +153,23 @@ header {
         }
     }
 }
-
-
+#shopCont{
+    display: flex;
+}
+#cardOrderCont{
+    display: block;
+}
+#orderForm{
+    margin-top: 100px;
+}
 .firma {
     min-height: 900px;
-    display: flex;
-
+    
     .orderCont {
         flex-wrap: wrap;
         display: block;
         height: 750px;
+        width: 100%;
         form {
 
             select {
@@ -339,7 +346,14 @@ header {
     position: relative;
     .cartCont {
         padding: 5px;
-        max-height: 80%;
+        height: 350px;
+        .cartLimit{
+            height: 80%;
+            overflow: scroll;
+            border-bottom: 3px solid $first;
+            padding: 10px;
+            background-color: $w05;
+        }
         p {
             text-align: center;
             color: $textCol;

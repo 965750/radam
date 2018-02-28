@@ -103,10 +103,13 @@
             <div class="alert alertUp <?php echo $msgClass; ?>">
                 <?php echo $msg; ?>
             </div>
+            <article id="cardOrderCont">
+            <!-- Karta -->
             <article class="cardPreCont" v-show="!buy">
                 <div>
                     <div class="cartCont">
                         <p class="emptyText" v-show="!empty">First You need to add some products</p>
+                        <div class="cartLimit">
                         <div v-for="(single, index) in card">
                             <div class="singlePrice">
                                 <div class="singlePriceNo">
@@ -119,12 +122,36 @@
                                 <div class="deleteBtn"><button v-on:click="deleteProduct(index)">Usuń</button></div>
                             </div>
                         </div>
+                        </div>
                         <div class="basketLeft" v-on:click="changeBuy"><i class="fas fa-caret-left"></i>
                             <i class="fas basketI fa-shopping-basket"></i></div>
                         <div v-show="empty" class="fullCostRight"><span>{{ fullCost }} PLN</span></div>
                     </div>
                 </div>
             </article>
+            <!-- Formularz -->
+                    <div class="orderCont" id="orderForm" v-show="!buy">
+                        <form method="post" action="shop.php">
+                            <select id="sel" name="option">
+                            
+                            </select>
+                            <?php if($msg != ''): ?>
+                            <div class="alert <?php echo $msgClass; ?>">
+                                <?php echo $msg; ?>
+                            </div>
+                            <?php endif; ?>
+                            <label class="labelHeader" for="name">Imię i Nazwisko</label>
+                            <input id="name" name="name" type="text" value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
+                            <label class="labelHeader" for="email">Email</label>
+                            <input id="email" name="email" type="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
+                            <label class="labelHeader" for="msg">Wiadomość</label>
+                            <textarea name="message" id="msg"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
+                            <input type="submit" name="submit" value="Złóż Zamówienie">
+                        </form>
+                    </div>
+                    </article>
+            <!-- Sklep -->
+            <article id="shopCont">
             <aside v-show="buy" class="categoryCont">
                 <div class="basketCont" v-on:click="changeBuy">
                     <i id="baskInCat" class="fas basketI fa-shopping-basket"></i>
@@ -170,26 +197,8 @@
                             <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">+</button></div>
                         </div>
                     </div>
-                    <div class="orderCont" id="orderForm">
-                        <form method="post" action="shop.php">
-                            <select id="sel" name="option">
-                            
-                            </select>
-                            <?php if($msg != ''): ?>
-                            <div class="alert <?php echo $msgClass; ?>">
-                                <?php echo $msg; ?>
-                            </div>
-                            <?php endif; ?>
-                            <label class="labelHeader" for="name">Imię i Nazwisko</label>
-                            <input id="name" name="name" type="text" value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
-                            <label class="labelHeader" for="email">Email</label>
-                            <input id="email" name="email" type="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
-                            <label class="labelHeader" for="msg">Wiadomość</label>
-                            <textarea name="message" id="msg"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
-                            <input type="submit" name="submit" value="Złóż Zamówienie">
-                        </form>
-                    </div>
                 </section>
+            </article>
             </article>
         </main>
         <footer>

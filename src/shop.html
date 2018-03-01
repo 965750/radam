@@ -108,7 +108,7 @@
             <article class="cardPreCont" v-show="!buy">
                 <div>
                     <div class="cartCont">
-                        <p class="emptyText" v-show="!empty">First You need to add some products</p>
+                        <p class="emptyText" v-show="empty">First You need to add some products</p>
                         <div class="cartLimit">
                         <div v-for="(single, index) in card">
                             <div class="singlePrice">
@@ -174,7 +174,7 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">+</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPrice(index, 'Chemia')" class="btnBuy">+</button></div>
                         </div>
                     </div>
                     <div v-for="(product, index) in productsMaszyny" class="singleDiam" v-show="maszyny">
@@ -184,7 +184,7 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">+</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPrice(index, 'Maszyny')" class="btnBuy">+</button></div>
                         </div>
                     </div>
                     <div v-for="(product, index) in productsSerwis" class="singleDiam" v-show="serwis">
@@ -194,7 +194,7 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="buyScroll(product.name)" class="btnBuy">+</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPrice(index, 'Serwis')" class="btnBuy">+</button></div>
                         </div>
                     </div>
                 </section>

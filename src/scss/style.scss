@@ -335,8 +335,7 @@ header {
 .cardPreCont {
     border-top: 3px solid $w1;
     width: 80%;
-    min-height: 200px;
-    max-height: 400px;
+    height: 410px;
     margin: 150px auto 0px;
     background-color: $w0;
     border-radius: 10px;
@@ -347,9 +346,18 @@ header {
     .cartCont {
         padding: 5px;
         height: 350px;
+        .emptyText{
+            content: 'Powrót do sklepu';
+            height: 25px;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 0 0 5px black;
+            color: white
+        }
         .cartLimit{
             height: 80%;
-            overflow: scroll;
+            overflow-y: scroll;
             border-bottom: 3px solid $first;
             padding: 10px;
             background-color: $w05;
@@ -416,17 +424,43 @@ header {
                 color: white;
                 cursor: pointer;
             }
+            &:after{
+            content: 'Powrót do sklepu';
+            height: 25px;
+            widht: 170px;
+            position: absolute;
+            top: 0px;
+            right: -150px;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 0 0 5px black;
+            color: white
+        }
         }
         .fullCostRight {
             position: absolute;
             bottom: 5px;
             right: 10px;
+            width: 150px;
             border-top: 1px solid $first;
             span{
                 color: $textCol;
                 font-size: 20px;
                 font-weight: 700;
             }
+            &:before{
+            content: 'Koszt Całkowity';
+            height: 10px;
+            widht: 70px;
+            position: absolute;
+            top: -25px;
+            right: 5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 0 0 5px black;
+            color: white
+        }
         }
     }
 }
@@ -450,10 +484,23 @@ header {
         width: 90px;
         margin: auto;
         padding-top: 10px;
+        position: relative;
         &:hover .basketI {
             background-color: $w05;
             color: $first;
             cursor: pointer;
+        }
+        &:after{
+            content: 'Koszyk';
+            height: 10px;
+            widht: 30px;
+            position: absolute;
+            top: 0px;
+            left: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 0 0 5px black;
+            color: white
         }
         .basketI {
             height: 90px;

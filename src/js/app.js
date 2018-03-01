@@ -51,35 +51,7 @@ new Vue({
             },
         ],
         card: [
-            {
-                name: "test pro 1",
-                price: "23.27",
-            },
-            {
-                name: "test pro 2",
-                price: "24.27",
-            },
-            {
-                name: "test pro 1",
-                price: "23.27",
-            },
-            {
-                name: "test pro 2",
-                price: "24.27",
-            },
-            {
-                name: "test pro 1",
-                price: "23.27",
-            },
-            {
-                name: "test pro 2",
-                price: "24.27",
-            },
-            {
-                name: "test pro 1",
-                price: "23.27",
-            },
-
+            
         ],
     },
     methods: {
@@ -105,14 +77,33 @@ new Vue({
             this.fullCost = this.fullCost - this.card[index].price;
             this.fullCost = Math.round(this.fullCost * 100) / 100;
             this.card.splice(index, 1);
-
+            
             if (this.cardCount == 0) {
                 this.empty = true;
                 this.fullCost = 0;
             }
+
         },
         readRefs: function () {
 
+        },
+        checkPrice: function(index, category){
+            
+            alert(category);
+            this.cardCount += 1;
+            this.empty = false;
+            this.fullCost = this.fullCost + this.productsChemia[index].cost;
+            alert(this.fullCost);
+            this.fullCost = Math.round(this.fullCost * 100) / 100;
+            
+            
+            this.card.push({
+                index: index,
+                price: this.category[index].cost,
+                name: this.category[index].name
+            });
+            
+            
         },
         buyScroll: function (nameOfProduct) {
 

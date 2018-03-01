@@ -153,58 +153,99 @@ header {
         }
     }
 }
-#shopCont{
+
+#shopCont {
     display: flex;
 }
-#cardOrderCont{
+
+#cardOrderCont {
     display: block;
 }
-#orderForm{
+
+#orderForm {
     margin-top: 100px;
 }
+
 .firma {
     min-height: 900px;
-    
+
     .orderCont {
         flex-wrap: wrap;
         display: block;
         height: 750px;
         width: 100%;
         form {
-
-            select {
-                width: 600px;
-                height: 40px;
-                margin: auto;
+            display: flex;
+            width: 800px;
+            height: 800px;
+            margin: auto;
+            .formRight {
+                width: 25%;
+                height: 50%;
                 display: block;
-                border-radius: 10px;
+                background: $w0;
+                border-radius: 3px;
+                border: 0px solid $first;
                 padding: 5px;
-                border: 3px solid $first;
-                background-color: $first;
-                color: white;
-                font-size: 20px;
-                font-weight: 700;
+                font-size: 18px;
+                transition: .1s all;
                 box-sizing: border-box;
-                &:hover {
-                    cursor: pointer;
-                    background-color: lighten($first, 5%);
+                box-shadow: 0 1px 4px #8d8d8d;
+
+                .formFullCost {
+                    width: 100px;
+                    height: 100px;
+                    background: $w05;
+                    border-radius: 50%;
+                    margin: 10px auto 0px;
+                    text-align: center;
+                    line-height: 100px;
+                    font-size: 20px;
+                    position: relative;
+                    border-bottom: 2px solid $w2;
+                    &:after {
+                        content: 'łączna wycena';
+                        height: 10px;
+                        widht: 70px;
+                        position: absolute;
+                        top: 30px;
+                        right: 5px;
+                        font-size: 11px;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        text-shadow: 0 0 5px black;
+                        color: white;
+                    }
                 }
-                &:focus {
-                    outline: none;
+                .formItems {
+                    width: 95%;
+                    margin: 15px auto 0px;
+                    border-top: 1px solid $first;
+                    height: 66%;
+                    background: $w1;
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+
+                    .formRightLi {
+                        list-style: none;
+                        font-size: 15px;
+                        padding: 5px;
+                        text-align: center;
+                    }
                 }
-                option {
-                    background-color: darken($first, 10%);
-                }
+            }
+            .formLeft {
+                width: 70%;
             }
             label {
                 text-align: left;
                 display: block;
-                width: 500px;
+                width: 90%;
                 margin: 20px auto 0px;
                 font-weight: 700;
             }
             input[type="text"] {
-                width: 500px;
+                width: 90%;
                 display: block;
                 margin: auto;
                 border-radius: 10px;
@@ -228,7 +269,7 @@ header {
                 }
             }
             input[type="email"] {
-                width: 500px;
+                width: 90%;
                 display: block;
                 margin: auto;
                 border-radius: 10px;
@@ -252,9 +293,8 @@ header {
                 }
             }
             textarea {
-                min-width: 500px;
+                width: 90%;
                 min-height: 200px;
-                max-width: 500px;
                 max-height: 200px;
                 display: block;
                 margin: auto;
@@ -279,7 +319,7 @@ header {
                 }
             }
             input[type="submit"] {
-                width: 200px;
+                width: 50%;
                 height: 40px;
                 margin: 20px auto;
                 display: block;
@@ -346,7 +386,7 @@ header {
     .cartCont {
         padding: 5px;
         height: 350px;
-        .emptyText{
+        .emptyText {
             content: 'Powrót do sklepu';
             height: 25px;
             font-size: 20px;
@@ -355,7 +395,7 @@ header {
             text-shadow: 0 0 5px black;
             color: white
         }
-        .cartLimit{
+        .cartLimit {
             height: 80%;
             overflow-y: scroll;
             border-bottom: 3px solid $first;
@@ -419,24 +459,24 @@ header {
             padding-left: 5px;
             transition: .1s all linear;
             box-shadow: 0 2px 5px $w2;
-            &:hover{
+            &:hover {
                 background-color: $first;
                 color: white;
                 cursor: pointer;
             }
-            &:after{
-            content: 'Powrót do sklepu';
-            height: 25px;
-            widht: 170px;
-            position: absolute;
-            top: 0px;
-            right: -150px;
-            font-size: 15px;
-            text-transform: uppercase;
-            font-weight: 700;
-            text-shadow: 0 0 5px black;
-            color: white
-        }
+            &:after {
+                content: 'Powrót do sklepu';
+                height: 25px;
+                widht: 170px;
+                position: absolute;
+                top: 0px;
+                right: -150px;
+                font-size: 15px;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 0 5px black;
+                color: white
+            }
         }
         .fullCostRight {
             position: absolute;
@@ -444,23 +484,23 @@ header {
             right: 10px;
             width: 150px;
             border-top: 1px solid $first;
-            span{
+            span {
                 color: $textCol;
                 font-size: 20px;
                 font-weight: 700;
             }
-            &:before{
-            content: 'Koszt Całkowity';
-            height: 10px;
-            widht: 70px;
-            position: absolute;
-            top: -25px;
-            right: 5px;
-            text-transform: uppercase;
-            font-weight: 700;
-            text-shadow: 0 0 5px black;
-            color: white
-        }
+            &:before {
+                content: 'łączna wycena';
+                height: 10px;
+                widht: 70px;
+                position: absolute;
+                top: -25px;
+                right: 5px;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 0 5px black;
+                color: white;
+            }
         }
     }
 }
@@ -490,7 +530,7 @@ header {
             color: $first;
             cursor: pointer;
         }
-        &:after{
+        &:after {
             content: 'Koszyk';
             height: 10px;
             widht: 30px;
@@ -514,7 +554,7 @@ header {
             box-shadow: 0px 0px 7px $first;
             transition: .1s all linear;
         }
-        .basketPlus{
+        .basketPlus {
             animation: shadowPlus .3s;
         }
     }
@@ -539,6 +579,10 @@ header {
                 background-color: $second;
                 cursor: pointer;
             }
+        }
+        .activeLi {
+            color: white;
+            background-color: $second;
         }
     }
 }
@@ -729,14 +773,15 @@ footer {
         display: none !important;
     }
 }
+
 @keyframes shadowPlus {
-    0%{
+    0% {
         box-shadow: 0px 0px 10px $first;
     }
-    50%{
+    50% {
         box-shadow: 0px 0px 20px $first;
     }
-    0%{
+    0% {
         box-shadow: 0px 0px 10px $first;
     }
 }

@@ -162,16 +162,40 @@ new Vue({
             this.chemia = true;
             this.maszyny = false;
             this.serwis = false;
+            
+            var chem = document.getElementById("chem");
+            var masz = document.getElementById("masz");
+            var serw = document.getElementById("serw");
+            
+            masz.classList.remove("activeLi");
+            serw.classList.remove("activeLi");
+            chem.classList.add("activeLi");
         },
         categoryMaszyny: function () {
             this.chemia = false;
             this.maszyny = true;
             this.serwis = false;
+            
+            var chem = document.getElementById("chem");
+            var masz = document.getElementById("masz");
+            var serw = document.getElementById("serw");
+            
+            chem.classList.remove("activeLi");
+            serw.classList.remove("activeLi");
+            masz.classList.add("activeLi");
         },
         categorySerwis: function () {
             this.chemia = false;
             this.maszyny = false;
             this.serwis = true;
+            
+            var chem = document.getElementById("chem");
+            var masz = document.getElementById("masz");
+            var serw = document.getElementById("serw");
+            
+            masz.classList.remove("activeLi");
+            chem.classList.remove("activeLi");
+            serw.classList.add("activeLi");
         },
     },
     computed: {

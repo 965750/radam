@@ -10,6 +10,8 @@
 		$email = htmlspecialchars($_POST['email']);
 		$message = htmlspecialchars($_POST['message']);
         $option = htmlspecialchars($_POST['option']);
+        $totalCost = htmlspecialchars($_POST['totalCost']);
+        $items = htmlspecialchars($_POST['items']);
 
 		// Check Required Fields
 		if(!empty($email) && !empty($name) && !empty($message)){
@@ -132,21 +134,32 @@
             <!-- Formularz -->
                     <div class="orderCont" id="orderForm" v-show="!buy">
                         <form method="post" action="shop.php">
-                            <select id="sel" name="option">
                             
-                            </select>
-                            <?php if($msg != ''): ?>
+                            
+                            <div class="formLeft">
+                               <?php if($msg != ''): ?>
                             <div class="alert <?php echo $msgClass; ?>">
                                 <?php echo $msg; ?>
                             </div>
                             <?php endif; ?>
-                            <label class="labelHeader" for="name">Imię i Nazwisko</label>
+                                <label class="labelHeader" for="name">Imię i Nazwisko</label>
                             <input id="name" name="name" type="text" value="<?php echo isset($_POST['name']) ? $name : ''; ?>">
                             <label class="labelHeader" for="email">Email</label>
                             <input id="email" name="email" type="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
                             <label class="labelHeader" for="msg">Wiadomość</label>
                             <textarea name="message" id="msg"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
                             <input type="submit" name="submit" value="Złóż Zamówienie">
+                            </div>
+                            <div class="formRight">
+                                <div class="formFullCost">{{ fullCost }} PLN</div>
+                                <div class="formItems">
+                                    <ul>
+                                        <li class="formRightLi" v-for="(single, index) in card">
+                                            {{ single. name }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     </article>
@@ -159,9 +172,9 @@
                 <div class="cats">
                 <h2>Kategorie</h2>
                 <ul>
-                    <li id="chem" v-on:click="categoryChemia">Chemia</li>
-                    <li id="masz" v-on:click="categoryMaszyny">Maszyny</li>
-                    <li id="serw" v-on:click="categorySerwis">Serwis Maszyn</li>
+                    <li id="chem" class="catsLi activeLi" v-on:click="categoryChemia">Chemia</li>
+                    <li id="masz" class="catsLi" v-on:click="categoryMaszyny">Maszyny</li>
+                    <li id="serw" class="catsLi" v-on:click="categorySerwis">Serwis Maszyn</li>
                 </ul>
                 </div>
             </aside>

@@ -125,7 +125,7 @@
                         </div>
                         <div class="basketLeft" v-on:click="changeBuy"><i class="fas fa-caret-left"></i>
                             <i class="fas basketI fa-shopping-basket"></i></div>
-                        <div v-show="empty" class="fullCostRight"><span>{{ fullCost }} PLN</span></div>
+                        <div v-show="!empty" class="fullCostRight"><span>{{ fullCost }} PLN</span></div>
                     </div>
                 </div>
             </article>
@@ -174,7 +174,7 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPrice(index, 'Chemia')" class="btnBuy">+</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPricePC(index)" class="btnBuy">+</button></div>
                         </div>
                     </div>
                     <div v-for="(product, index) in productsMaszyny" class="singleDiam" v-show="maszyny">
@@ -184,7 +184,7 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPrice(index, 'Maszyny')" class="btnBuy">+</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPricePM(index)" class="btnBuy">+</button></div>
                         </div>
                     </div>
                     <div v-for="(product, index) in productsSerwis" class="singleDiam" v-show="serwis">
@@ -194,7 +194,7 @@
                             <p>
                                 {{product.desc}}
                             </p>
-                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPrice(index, 'Serwis')" class="btnBuy">+</button></div>
+                            <div class="costCont"><span class="cost">{{product.cost}}PLN</span><button v-on:click="checkPricePS(index)" class="btnBuy">+</button></div>
                         </div>
                     </div>
                 </section>

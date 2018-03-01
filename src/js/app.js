@@ -3,7 +3,7 @@ new Vue({
     data: {
         buy: true,
         empty: true,
-        fullCost: 100,
+        fullCost: 0,
         cardCount: 0,
         chemia: true,
         maszyny: false,
@@ -87,23 +87,44 @@ new Vue({
         readRefs: function () {
 
         },
-        checkPrice: function(index, category){
+        checkPricePC: function(index){
             
-            alert(category);
             this.cardCount += 1;
             this.empty = false;
             this.fullCost = this.fullCost + this.productsChemia[index].cost;
-            alert(this.fullCost);
             this.fullCost = Math.round(this.fullCost * 100) / 100;
-            
             
             this.card.push({
                 index: index,
-                price: this.category[index].cost,
-                name: this.category[index].name
-            });
+                price: this.productsChemia[index].cost,
+                name: this.productsChemia[index].name
+            });  
+        },
+        checkPricePM: function(index){
             
+            this.cardCount += 1;
+            this.empty = false;
+            this.fullCost = this.fullCost + this.productsMaszyny[index].cost;
+            this.fullCost = Math.round(this.fullCost * 100) / 100;
             
+            this.card.push({
+                index: index,
+                price: this.productsMaszyny[index].cost,
+                name: this.productsMaszyny[index].name
+            });  
+        },
+        checkPricePS: function(index){
+            
+            this.cardCount += 1;
+            this.empty = false;
+            this.fullCost = this.fullCost + this.productsSerwis[index].cost;
+            this.fullCost = Math.round(this.fullCost * 100) / 100;
+            
+            this.card.push({
+                index: index,
+                price: this.productsSerwis[index].cost,
+                name: this.productsSerwis[index].name
+            });  
         },
         buyScroll: function (nameOfProduct) {
 

@@ -57,18 +57,6 @@ new Vue({
     methods: {
         changeBuy: function() {
             this.buy = !this.buy;
-            
-            var ord = document.getElementById("ord");
-            var shop = document.getElementById("shop");
-            
-            if( this.buy == true){
-                shop.classList.add("activeNav");
-                ord.classList.remove("activeNav");
-                
-            } else {
-                ord.classList.add("activeNav");
-                shop.classList.remove("activeNav");      
-            }
         },
         deleteProduct: function (index) {
 
@@ -111,7 +99,7 @@ new Vue({
                 index: index,
                 price: this.productsMaszyny[index].cost,
                 name: this.productsMaszyny[index].name
-            });  
+            });
         },
         checkPricePS: function(index){
             

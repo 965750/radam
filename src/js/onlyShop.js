@@ -9,5 +9,20 @@ $(window).on("scroll", function(){
         $("#shop").addClass("activeNav");
         
     } else {}
-});    
+}); 
+    $(".btnBuy").on("click", function(){
+        $(".alertBuy").css({
+            display: "block"
+        });
+        $(".alertBuy").animate({
+        opacity: 1
+        },300).delay(500).animate({
+        opacity: 0  
+    },400);
+        setTimeout(function(){ 
+            $(".alertBuy").css({
+            display: "none"
+        });
+        }, 1200);
+});
 });

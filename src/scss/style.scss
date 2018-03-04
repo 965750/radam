@@ -32,10 +32,14 @@ header {
             flex-grow: 2;
             display: flex;
             margin: auto;
+            #logo70{
+                transform: scale(.95);
+                margin-left: 5%;
+            }
             .socialICont {
                 width: 35px;
                 height: 35px;
-                margin: 0px 5px;
+                margin: auto 5px;
                 text-align: center;
                 border: 5px solid $w1;
                 border-radius: 50%;
@@ -163,17 +167,34 @@ header {
 }
 
 #orderForm {
-    margin-top: 100px;
+    margin-top: 200px;
 }
-
+.triangleCorner{
+    height: 200px;
+    width: 200px;
+    background: $w05;
+    transform: rotate(35deg);
+    position: absolute;
+    bottom: -120px;
+    left: -80px;
+    z-index: -2;
+    box-shadow: 0 0 15px $w2;
+}
 .firma {
     min-height: 900px;
+    position: relative;
 
     .orderCont {
         flex-wrap: wrap;
         display: block;
         height: 750px;
         width: 100%;
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            color: $first;
+            border-bottom: 1px solid $w1;
+        }
         form {
             display: flex;
             width: 800px;
@@ -321,7 +342,7 @@ header {
             input[type="submit"] {
                 width: 50%;
                 height: 40px;
-                margin: 20px auto;
+                margin: 20px auto 0px auto;
                 display: block;
                 font-size: 18px;
                 text-align: center;
@@ -340,7 +361,48 @@ header {
         }
     }
 }
-
+.arrToForm{
+    width: 250px;
+    height: 40px;
+    margin: 40px auto;
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    padding-bottom: 2px;
+    font-weight: 700;
+    padding-top: 5px;
+    box-sizing: border-box;
+    border: 3px solid $second;
+    background-color: $first;
+    color: white;
+    .fas2{
+        animation: 2s arrowDown infinite;
+        padding: 0px 8px;
+    }
+    &:hover {
+        background-color: $zero;
+        border: 3px solid $first;
+        cursor: pointer;
+        }
+}
+.alertBuy{
+    width: 150px;
+    height: 30px;
+    background: $w05;
+    border: 1px solid $first;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 4px 3px 0px;
+    box-sizing: border-box;
+    color: $first;
+    position: fixed;
+    top: 30%;
+    left: -1px;
+    z-index: 15;
+    opacity: 0;
+    display: none;
+}
 .alert {
     height: 50px;
     width: 300px;
@@ -644,6 +706,12 @@ header {
                         border: 3px solid $first;
                         cursor: pointer;
                     }
+                }
+                .confirmAlert{
+                        color: $first;
+                        font-size: 12px;
+                        position: absolute;
+                        opacity: 0;
                 }
                 .cost {
                     margin-right: 20px;

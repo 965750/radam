@@ -14,6 +14,11 @@ $(document).ready(function () {
             scrollTop: firmaTop
         }, 700, 'swing');
     });
+    $(".arrToForm").on("click", function(){
+        $("html, body").animate({
+            scrollTop: 820
+        }, 700, 'swing');
+    });
     // Site MAP footer
     $("#FmapI li:nth-child(1)").on("click", function () {
         $("html").animate({
@@ -47,6 +52,11 @@ $(document).ready(function () {
     $("#FmapS li:nth-child(4)").on("click", function () {
         window.location.replace("index.html");
     });
+    $("#cont").on("click", function () {
+        $("html").animate({
+            scrollTop: firmaTop
+        }, 700, 'swing');
+    });
 });
 $(window).on("scroll", function () {
 
@@ -59,10 +69,15 @@ $(window).on("scroll", function () {
             opacity: 0.8,
             height: '40px'
         });
+        $("#logo70").css({
+            transform: "scale(.58)",
+            marginTop: "-13px"
+        });
         $(".socialICont").css({
             height: '25px',
             width: '25px',
-            lineHeight: '27px'
+            lineHeight: '27px',
+            margin: '3px'
         });
         $(".singleNavi").css({
             height: '40px',
@@ -76,10 +91,15 @@ $(window).on("scroll", function () {
             opacity: 1,
             height: '70px'
         });
+        $("#logo70").css({
+            transform: "scale(.95)",
+            marginTop: "0px"
+        });
         $(".socialICont").css({
             height: '35px',
             width: '35px',
-            lineHeight: '37px'
+            lineHeight: '37px',
+            margin: 'auto 5px'
         });
         $(".singleNavi").css({
             height: '70px',

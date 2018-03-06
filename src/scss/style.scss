@@ -185,29 +185,41 @@ header {
     position: relative;
     .kontaktCont{
         margin-top: 120px;
+        .kontaktContInside{
+            display: flex;
+        }
         h2{
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 100px;
             color: $first;
             font-size: 35px;
             border-bottom: 1px solid $w1;
         }
         .googleMapCont{
-        width: 800px;
+        width: 700px;
         height: 400px;
         margin: auto;
-        background-color: #4b962f;
+        background-color: $w05;
     }
         .adressCont{
-            display: flex;
+            margin: auto;
+            height: 230px;
             .singleAdress{
-                height: 100px;
-                width: 170px;
+                
+                width: 220px;
                 padding: 5px;
                 box-sizing: border-box;
-                margin: auto;
+                margin: 25px auto;
                 text-align: left;
-                background-color: $w05;
+                color: $textCol;
+                font-size: 18px;
+            }
+            h3{
+                color: $first;
+                border-bottom: 1px solid $w1;
+                text-align: center;
+                width: 100%;
+                margin: 40px auto 10px;
             }
         }
     }
@@ -239,6 +251,11 @@ header {
                 transition: .1s all;
                 box-sizing: border-box;
                 box-shadow: 0 1px 4px #8d8d8d;
+                
+                .hiddenInput{
+                    opacity: 0;
+                    display: none;
+                }
 
                 .formFullCost {
                     width: 100px;
@@ -387,6 +404,9 @@ header {
             }
         }
     }
+}
+.firmaIndex{
+    min-height: 770px;
 }
 .arrToForm{
     width: 250px;

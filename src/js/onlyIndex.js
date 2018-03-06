@@ -12,5 +12,20 @@ $(window).on("scroll", function(){
         $("#home").removeClass("activeNav");
         $("#cont").addClass("activeNav");
     }
-});    
+});   
+    
 });
+function initMap(){
+        var location = {
+            lat: 50.319376,
+            lng: 18.242230
+        };
+        var map = new google.maps.Map(document.getElementById("map"),{
+            zoom: 15,
+            center: location
+        });
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    };

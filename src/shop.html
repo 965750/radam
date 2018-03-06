@@ -9,9 +9,18 @@
 		$name = htmlspecialchars($_POST['name']);
 		$email = htmlspecialchars($_POST['email']);
 		$message = htmlspecialchars($_POST['message']);
-        $option = htmlspecialchars($_POST['option']);
-        $totalCost = htmlspecialchars($_POST['totalCost']);
-        $items = htmlspecialchars($_POST['items']);
+
+        $totalCost = htmlspecialchars($_POST['cost']);
+        $items0 = htmlspecialchars($_POST['0']);
+        $items1 = htmlspecialchars($_POST['1']);
+        $items2 = htmlspecialchars($_POST['2']);
+        $items3 = htmlspecialchars($_POST['3']);
+        $items4 = htmlspecialchars($_POST['4']);
+        $items5 = htmlspecialchars($_POST['5']);
+        $items6 = htmlspecialchars($_POST['6']);
+        $items7 = htmlspecialchars($_POST['7']);
+        $items8 = htmlspecialchars($_POST['8']);
+        $items9 = htmlspecialchars($_POST['9']);
 
 		// Check Required Fields
 		if(!empty($email) && !empty($name) && !empty($message)){
@@ -30,8 +39,9 @@
 				$body = 'Zamówienie Radam'."\n"
 					.'Imie: '.$name."\n"
 					.'Email: '.$email."\n"
-                    .'Produkt: '.$option."\n"
-					.'Wiadomość: '.$message;
+                    .'Produkty: '.$items0.' '.$items1.' '.$items2.' '.$items3.' '.$items4.' '.$items5.' '.$items6.' '.$items7.' '.$items8.' '.$items9."\n"
+					.'Koszt: '.$totalCost."\n"
+                    .'Wiadomość: '.$message;
 
 
 				// Email Headers
@@ -48,6 +58,7 @@
 					// Email Sent
 					$msg = 'Your email has been sent';
 					$msgClass = 'yes';
+                    echo $body;
 
 				} else {
 					// Failed
@@ -159,12 +170,14 @@
                             <div class="formRight">
                                 <div class="formFullCost">{{ fullCost }} PLN</div>
                                 <div class="formItems">
-                                    <ul>
+                                    <ul name="items">
                                         <li class="formRightLi" v-for="(single, index) in card">
                                             {{ single. name }}
                                         </li>
                                     </ul>
                                 </div>
+                                <textarea name="cost" class="hiddenInput" id="hCost">{{ fullCost }} PLN</textarea>
+                                <textarea v-for="(single, index) in card" v-bind:name="index" class="hiddenInput">{{ single. name }}</textarea>
                             </div>
                         </form>
                     </div>

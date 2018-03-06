@@ -8,6 +8,7 @@ new Vue({
         chemia: true,
         maszyny: false,
         serwis: false,
+
         productsChemia: [
             {
                 name: 'Produkt 1 - chemia',
@@ -53,6 +54,7 @@ new Vue({
         card: [
             
         ],
+        fullCard: '',
     },
     methods: {
         changeBuy: function() {
@@ -111,7 +113,7 @@ new Vue({
             this.card.push({
                 index: index,
                 price: this.productsSerwis[index].cost,
-                name: this.productsSerwis[index].name
+                name: this.productsSerwis[index].name,
             });  
         },
         buyScroll: function (nameOfProduct) {

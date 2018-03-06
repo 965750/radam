@@ -175,30 +175,39 @@ header #mainNav {
   position: relative; }
   .firma .kontaktCont {
     margin-top: 120px; }
+    .firma .kontaktCont .kontaktContInside {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
     .firma .kontaktCont h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 100px;
       color: #c60e0e;
       font-size: 35px;
       border-bottom: 1px solid #d4d4d4; }
     .firma .kontaktCont .googleMapCont {
-      width: 800px;
+      width: 700px;
       height: 400px;
       margin: auto;
-      background-color: #4b962f; }
+      background-color: #ebebeb; }
     .firma .kontaktCont .adressCont {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; }
+      margin: auto;
+      height: 230px; }
       .firma .kontaktCont .adressCont .singleAdress {
-        height: 100px;
-        width: 170px;
+        width: 220px;
         padding: 5px;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        margin: auto;
+        margin: 25px auto;
         text-align: left;
-        background-color: #ebebeb; }
+        color: #2f2f2f;
+        font-size: 18px; }
+      .firma .kontaktCont .adressCont h3 {
+        color: #c60e0e;
+        border-bottom: 1px solid #d4d4d4;
+        text-align: center;
+        width: 100%;
+        margin: 40px auto 10px; }
   .firma .orderCont {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -233,6 +242,9 @@ header #mainNav {
                 box-sizing: border-box;
         -webkit-box-shadow: 0 1px 4px #8d8d8d;
                 box-shadow: 0 1px 4px #8d8d8d; }
+        .firma .orderCont form .formRight .hiddenInput {
+          opacity: 0;
+          display: none; }
         .firma .orderCont form .formRight .formFullCost {
           width: 100px;
           height: 100px;
@@ -371,6 +383,9 @@ header #mainNav {
           background-color: #d62727;
           border: 3px solid #c60e0e;
           cursor: pointer; }
+
+.firmaIndex {
+  min-height: 770px; }
 
 .arrToForm {
   width: 250px;

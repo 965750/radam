@@ -52,27 +52,30 @@
             </div>
         </article>
     </header>
-    <main class="firma">
+    <main class="firma firmaIndex">
     <div class="triangleCorner"></div>
         <article class="kontaktCont">
             <h2>Kontakt</h2>
-            <div class="googleMapCont"></div>
-            <h3>Adres</h3>
-                <section class="adressCont">
-                
+            <div class="kontaktContInside">
+            <div class="googleMapCont" id="map"></div>
+            <section class="adressCont">
+                <div>
+                <h3>Adres</h3>
                 <div class="singleAdress"><p>FUH RADAM</p><p>Ryszard Adamkiewicz</p></div>
                 <div class="singleAdress"><p>ul. Mostowa 11</p><p>47-223 Kędzierzyn-Koźle</p></div>
                 <div class="singleAdress"><p>radam@jamaro.com.pl</p><p>tel/fax: 77 481 38 38</p><p>tel kom: +48 602 618 410</p></div>
+                </div>
             </section>
+            </div>
         </article>
     </main>
     <footer>
         <div class="topFooter">
             <div class="topFooterLeft">
                 <h2>Zapytaj</h2>
-                <div class="singleZap"><i class="fas footI fa-map-marker"></i><span class="footerZap">wrocław ul.główna 20/5 58-500</span></div>
-                <div class="singleZap"><i class="fas footI fa-phone"></i><span class="footerZap">+48 586 359 931</span></div>
-                <div class="singleZap"><i class="fas footI fa-envelope"></i><span class="footerZap">justansimple@gmail.com</span></div>
+                <div class="singleZap"><i class="fas footI fa-map-marker"></i><span class="footerZap">Kędzierzyn-Koźle ul. Mostowa 11 47-223</span></div>
+                <div class="singleZap"><i class="fas footI fa-phone"></i><span class="footerZap">+48 602 618 410</span></div>
+                <div class="singleZap"><i class="fas footI fa-envelope"></i><span class="footerZap">radam@jamaro.com.pl</span></div>
             </div>
             <div class="topFooterMid">
                 <h2>Mapa Strony</h2>
@@ -95,5 +98,5 @@
         </div>
     </footer>
 </body>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaa35AmFReNAhjswqGcHkNzB9G1hHJDgk&callback=initMap"></script>
 </html>

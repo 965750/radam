@@ -132,7 +132,7 @@ header #mainNav {
       background-color: #de1010;
       border-radius: 50%;
       position: absolute;
-      left: calc(50% - 30px);
+      left: calc(50% - 0px);
       bottom: -35px;
       z-index: 0;
       -webkit-transition: .2s;
@@ -173,6 +173,32 @@ header #mainNav {
 .firma {
   min-height: 900px;
   position: relative; }
+  .firma .kontaktCont {
+    margin-top: 120px; }
+    .firma .kontaktCont h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #c60e0e;
+      font-size: 35px;
+      border-bottom: 1px solid #d4d4d4; }
+    .firma .kontaktCont .googleMapCont {
+      width: 800px;
+      height: 400px;
+      margin: auto;
+      background-color: #4b962f; }
+    .firma .kontaktCont .adressCont {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .firma .kontaktCont .adressCont .singleAdress {
+        height: 100px;
+        width: 170px;
+        padding: 5px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        margin: auto;
+        text-align: left;
+        background-color: #ebebeb; }
   .firma .orderCont {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

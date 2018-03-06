@@ -144,7 +144,7 @@ header {
             background-color: lighten($first, 5%);
             border-radius: 50%;
             position: absolute;
-            left: calc(50% - 30px);
+            left: calc(50% - 0px);
             bottom: -35px;
             z-index: 0;
             transition: .2s;
@@ -183,7 +183,34 @@ header {
 .firma {
     min-height: 900px;
     position: relative;
-
+    .kontaktCont{
+        margin-top: 120px;
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            color: $first;
+            font-size: 35px;
+            border-bottom: 1px solid $w1;
+        }
+        .googleMapCont{
+        width: 800px;
+        height: 400px;
+        margin: auto;
+        background-color: #4b962f;
+    }
+        .adressCont{
+            display: flex;
+            .singleAdress{
+                height: 100px;
+                width: 170px;
+                padding: 5px;
+                box-sizing: border-box;
+                margin: auto;
+                text-align: left;
+                background-color: $w05;
+            }
+        }
+    }
     .orderCont {
         flex-wrap: wrap;
         display: block;

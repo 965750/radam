@@ -25,4 +25,14 @@ $(window).on("scroll", function(){
         });
         }, 1200);
 });
+    
+    $("#email").on("blur", function(){
+        if ($("#email").val().length === 0){
+            $(".normalAlertCont").text("Proszę o podanie adresu Email.");
+            $("#formSubmit").attr("disabled", "disabled");
+        } else {
+            $(".normalAlertCont").text("");
+            $("#formSubmit").removeAttr("disabled");
+        }        
+    });
 });

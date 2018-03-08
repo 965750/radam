@@ -165,8 +165,10 @@
                             <input id="email" name="email" type="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>">
                             <label class="labelHeader" for="msg">Wiadomość</label>
                             <textarea name="message" id="msg"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
-                            <input type="submit" name="submit" value="Złóż Zamówienie">
+                            <input type="submit" id="formSubmit" name="submit" value="Złóż Zamówienie">
+                            <div class="normalAlertCont"></div>
                             </div>
+                            
                             <div class="formRight">
                                 <div class="formFullCost">{{ fullCost }} PLN</div>
                                 <div class="formItems">

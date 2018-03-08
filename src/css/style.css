@@ -287,7 +287,7 @@ header #mainNav {
         text-align: left;
         display: block;
         width: 90%;
-        margin: 20px auto 0px;
+        margin: 0px auto 0px;
         font-weight: 700; }
       .firma .orderCont form input[type="text"] {
         width: 90%;
@@ -442,6 +442,14 @@ header #mainNav {
   -webkit-animation: alertMsg 5s forwards;
           animation: alertMsg 5s forwards;
   display: none; }
+
+.normalAlertCont {
+  color: #c60e0e;
+  height: 25px;
+  width: 300px;
+  font-size: 13px;
+  text-align: center;
+  margin: 15px auto; }
 
 .alertUp {
   position: fixed;

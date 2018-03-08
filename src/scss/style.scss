@@ -306,7 +306,7 @@ header {
                 text-align: left;
                 display: block;
                 width: 90%;
-                margin: 20px auto 0px;
+                margin: 0px auto 0px;
                 font-weight: 700;
             }
             input[type="text"] {
@@ -460,9 +460,16 @@ header {
     line-height: 50px;
     border-radius: 10px;
     animation: alertMsg 5s forwards;
-    display: none;
+    display: none
 }
-
+.normalAlertCont{
+    color: $first;
+    height: 25px;
+    width: 300px;
+    font-size: 13px;
+    text-align: center;
+    margin: 15px auto;
+}
 .alertUp {
     position: fixed;
     top: 20%;

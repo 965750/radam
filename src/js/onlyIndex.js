@@ -2,13 +2,13 @@ $(document).ready(function(){
     
 $(window).on("scroll", function(){
     
-    var firmaTop = $(".firma").offset().top - 100;
+    var firmaTop = $(".kontaktCont").offset().top;
     
     if ($(window).scrollTop() > 0 && $(window).scrollTop() < firmaTop) {
         $("#cont").removeClass("activeNav");
         $("#home").addClass("activeNav");
         
-    } else if ($(window).scrollTop() > firmaTop) {
+    } else if ($(window).scrollTop() > (firmaTop - 100)) {
         $("#home").removeClass("activeNav");
         $("#cont").addClass("activeNav");
     }

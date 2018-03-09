@@ -67,7 +67,8 @@ $(window).on("scroll", function () {
             position: 'fixed',
             zIndex: 15,
             opacity: 0.8,
-            height: '40px'
+            height: '40px',
+            top: '0px'
         });
         $("#logo70").css({
             transform: "scale(.58)",
